@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/blog2.png">
 <meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/blog3.png">
 <meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/blog4.png">
-<meta property="og:updated_time" content="2019-03-19T09:00:56.559Z">
+<meta property="og:updated_time" content="2019-03-19T09:05:35.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="blog">
 <meta name="twitter:description" content="Hexo 搭建个人博客1，获得个人域名直接去万网注册一个域名就行 2，创建Github个人仓库在github创建博客仓库，仓库的名字为：用户名.github.io。 3，安装依赖项使用npm命令安装Hexo，输入： 1npm install -g hexo-cli 安装完成后，可以在本地新建文件夹：web，初始化我们的博客，输入： 1hexo init blog 注意，这里的命令都是作用在刚刚创建">
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-19 17:00:56" itemprop="dateModified" datetime="2019-03-19T17:00:56+08:00">2019-03-19</time>
+                <time title="Modified: 2019-03-19 17:05:35" itemprop="dateModified" datetime="2019-03-19T17:05:35+08:00">2019-03-19</time>
               
             
           </span>
@@ -436,9 +436,11 @@
 <p>baidu_url_submit:<br>  count: 100 # 提交最新的一个链接<br>  host: <a href="http://www.yfnotes.cn" target="_blank" rel="noopener">www.yfnotes.cn</a> # 在百度站长平台中注册的域名<br>  token: 你自己的的token # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!<br>  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">再加入新的deploye</span><br></pre></td></tr></table></figure></p>
 <p>deploy:</p>
 <ul>
-<li>type:baidu_url_submitter<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 问题：</span><br><span class="line"></span><br><span class="line">#### 1：出现问题：ERROR Deployer not found: git</span><br><span class="line"></span><br><span class="line">解决办法：在blog文件夹下输入以下命令：</span><br></pre></td></tr></table></figure>
+<li>type:baidu_url_submitter<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这样每次deploy都时候就会自动推送了</span><br><span class="line"></span><br><span class="line">修改主题配置文件自动推送：</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>#Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.<br>baidu_push: true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 问题：</span><br><span class="line"></span><br><span class="line">#### 1：出现问题：ERROR Deployer not found: git</span><br><span class="line"></span><br><span class="line">解决办法：在blog文件夹下输入以下命令：</span><br></pre></td></tr></table></figure>
 <p>npm install hexo-deployer-git –sav<br><code>`</code></p>
 <h3 id="ref"><a href="#ref" class="headerlink" title="ref:"></a>ref:</h3><p><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a></p>
 
