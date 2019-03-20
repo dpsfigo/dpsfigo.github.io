@@ -105,7 +105,7 @@
 <meta property="og:description" content="1, 中文设置修改站点配置文件： 1language: zh-CN 2, 修改文章底部的那个带#号的标签实现效果图  具体实现方法 修改模板/themes/next/layout/_macro/post.swig，搜索 rel=&amp;quot;tag&amp;quot;&amp;gt;#，将 # 换成&amp;lt;i class=&amp;quot;fa fa-tag&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; 3, 添加网站访问量统">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/2_1.png">
-<meta property="og:updated_time" content="2019-03-20T07:48:20.265Z">
+<meta property="og:updated_time" content="2019-03-20T08:09:00.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo个性化设置">
 <meta name="twitter:description" content="1, 中文设置修改站点配置文件： 1language: zh-CN 2, 修改文章底部的那个带#号的标签实现效果图  具体实现方法 修改模板/themes/next/layout/_macro/post.swig，搜索 rel=&amp;quot;tag&amp;quot;&amp;gt;#，将 # 换成&amp;lt;i class=&amp;quot;fa fa-tag&amp;quot;&amp;gt;&amp;lt;/i&amp;gt; 3, 添加网站访问量统">
@@ -385,7 +385,7 @@
                 
               
 
-              <time title="创建时间：2019-03-20 14:11:56 / 修改时间：15:48:20" itemprop="dateCreated datePublished" datetime="2019-03-20T14:11:56+08:00">2019-03-20</time>
+              <time title="创建时间：2019-03-20 14:11:56 / 修改时间：16:09:00" itemprop="dateCreated datePublished" datetime="2019-03-20T14:11:56+08:00">2019-03-20</time>
             
 
             
@@ -457,6 +457,8 @@
 <p>此处需要去<a href="https://leancloud.cn" target="_blank" rel="noopener">https://leancloud.cn</a>注册一个账号并新建一个应用，将得到的appid和appkey添加上就可以了</p>
 <h2 id="5-隐藏网页底部powered-By-Hexo-强力驱动"><a href="#5-隐藏网页底部powered-By-Hexo-强力驱动" class="headerlink" title="5,隐藏网页底部powered By Hexo / 强力驱动"></a>5,隐藏网页底部powered By Hexo / 强力驱动</h2><p>修改主题文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  cleanly: true # Hide &apos;Powered by ...&apos; on footer, and more</span><br></pre></td></tr></table></figure>
+<p>或者打开<code>themes/next/layout/_partials/footer.swig</code>,使用<!-- -->隐藏之间的代码即可，或者直接删除。位置如图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">&#123;% if theme.footer.powered.enable %&#125;</span><br><span class="line">  &lt;div class=&quot;powered-by&quot;&gt;&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&apos;footer.powered&apos;, next_url(&apos;https://hexo.io&apos;, &apos;Hexo&apos;, &#123;class: &apos;theme-link&apos;&#125;)) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.powered.version %&#125; v&#123;&#123; hexo_env(&apos;version&apos;) &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line"> #&#125;&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.powered.enable and theme.footer.theme.enable %&#125;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.theme.enable %&#125;</span><br><span class="line">  &lt;div class=&quot;theme-info&quot;&gt;&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&apos;footer.theme&apos;) &#125;&#125; – &#123;&#123; next_url(&apos;https://theme-next.org&apos;, &apos;NexT.&apos; + theme.scheme, &#123;class: &apos;theme-link&apos;&#125;) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.theme.version %&#125; v&#123;&#123; version &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line">#&#125;&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="ref："><a href="#ref：" class="headerlink" title="ref："></a>ref：</h2><p><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></p>
 
       
