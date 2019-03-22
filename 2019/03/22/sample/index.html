@@ -96,25 +96,24 @@
 
 
 
-  <meta name="description" content="LeNet网络结构图 网络的参数 模型特点 输出表述是将给定的label转换为一个向量，作为神经网络的真值。传统常见的方法为1 of N，这里不在赘述。文章中是把图片对应的字符在7x12的bitmap上画出，白值为-1，黑值为1，其中84个像素平铺之后的向量对应为相应字符的表述，作为真值与F6连接。这样做的优点有：   对于识别全打印的ASCII字符有用（单独数字无用）  外表相近的字符如”i”和">
-<meta name="keywords" content="deeplearning">
+  <meta name="description" content="carpe diem,seize the day!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="经典网络">
-<meta property="og:url" content="http://yfnotes.cn/2018/11/05/deeplearning/经典网络/index.html">
+<meta property="og:title" content="python基础">
+<meta property="og:url" content="http://yfnotes.cn/2019/03/22/sample/index.html">
 <meta property="og:site_name" content="YF Notes">
-<meta property="og:description" content="LeNet网络结构图 网络的参数 模型特点 输出表述是将给定的label转换为一个向量，作为神经网络的真值。传统常见的方法为1 of N，这里不在赘述。文章中是把图片对应的字符在7x12的bitmap上画出，白值为-1，黑值为1，其中84个像素平铺之后的向量对应为相应字符的表述，作为真值与F6连接。这样做的优点有：   对于识别全打印的ASCII字符有用（单独数字无用）  外表相近的字符如”i”和">
+<meta property="og:description" content="carpe diem,seize the day!">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-07T03:38:57.404Z">
+<meta property="og:updated_time" content="2019-03-22T07:23:23.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="经典网络">
-<meta name="twitter:description" content="LeNet网络结构图 网络的参数 模型特点 输出表述是将给定的label转换为一个向量，作为神经网络的真值。传统常见的方法为1 of N，这里不在赘述。文章中是把图片对应的字符在7x12的bitmap上画出，白值为-1，黑值为1，其中84个像素平铺之后的向量对应为相应字符的表述，作为真值与F6连接。这样做的优点有：   对于识别全打印的ASCII字符有用（单独数字无用）  外表相近的字符如”i”和">
+<meta name="twitter:title" content="python基础">
+<meta name="twitter:description" content="carpe diem,seize the day!">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yfnotes.cn/2018/11/05/deeplearning/经典网络/">
+  <link rel="canonical" href="http://yfnotes.cn/2019/03/22/sample/">
 
 
 
@@ -124,7 +123,7 @@
   };
 </script>
 
-  <title>经典网络 | YF Notes</title>
+  <title>python基础 | YF Notes</title>
   
 
 
@@ -340,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yfnotes.cn/2018/11/05/deeplearning/经典网络/">
+    <link itemprop="mainEntityOfPage" href="http://yfnotes.cn/2019/03/22/sample/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yf">
@@ -357,7 +356,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">经典网络
+          <h1 class="post-title" itemprop="name headline">python基础
 
               
             
@@ -383,25 +382,9 @@
                 
               
 
-              <time title="创建时间：2018-11-05 10:39:37" itemprop="dateCreated datePublished" datetime="2018-11-05T10:39:37+08:00">2018-11-05</time>
+              <time title="创建时间：2019-03-22 15:23:23" itemprop="dateCreated datePublished" datetime="2019-03-22T15:23:23+08:00">2019-03-22</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-07 11:38:57" itemprop="dateModified" datetime="2018-11-07T11:38:57+08:00">2018-11-07</time>
-              
             
           </span>
 
@@ -418,8 +401,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/11/05/deeplearning/经典网络/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/05/deeplearning/经典网络/" itemprop="commentCount"></span>
+                <a href="/2019/03/22/sample/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/22/sample/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -454,65 +437,7 @@
       
 
       
-        <h3 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>模型特点</strong></p>
-<p>输出表述是将给定的label转换为一个向量，作为神经网络的真值。传统常见的方法为1 of N，这里不在赘述。<br>文章中是把图片对应的字符在7x12的bitmap上画出，白值为-1，黑值为1，其中84个像素平铺之后的向量对应为相应字符的表述，作为真值与F6连接。这样做的优点有： </p>
-<ol>
-<li>对于识别全打印的ASCII字符有用（单独数字无用） </li>
-<li>外表相近的字符如”i”和”1”等在这种表述中也相近，这样在神经网络之后加入个依靠语义更正的系统，可以提高准确率。 </li>
-<li>1 of N的表述在N大于几十的时候就会表现不好。 </li>
-<li>这样的表示可以用于拒绝非字符，而不是所有的都识别为字符。<br>设置“白值为-1，黑值为1”的原因是为了把函数限定在sigmoid函数斜率较大的区域，否则收敛较慢，而且会ill-conditioning。这个1的选择是由A得出，使得sigmoid的二次导最大（作者的猜测，还没有看论文验证））</li>
-</ol>
-<p>LeNet在输出层之前最后一个全连接层的大小设为84，是希望每一维特征分别提现标准7*12大小为图上每一个像素点的特性。</p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Alexnet"><a href="#Alexnet" class="headerlink" title="Alexnet"></a>Alexnet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="ZFNet"><a href="#ZFNet" class="headerlink" title="ZFNet"></a>ZFNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V1"><a href="#Inception-V1" class="headerlink" title="Inception-V1"></a>Inception-V1</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V2"><a href="#Inception-V2" class="headerlink" title="Inception-V2"></a>Inception-V2</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V3"><a href="#Inception-V3" class="headerlink" title="Inception-V3"></a>Inception-V3</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception-V4"></a>Inception-V4</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="ResNeXt"><a href="#ResNeXt" class="headerlink" title="ResNeXt"></a>ResNeXt</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="SENet"><a href="#SENet" class="headerlink" title="SENet"></a>SENet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="DenselyNet"><a href="#DenselyNet" class="headerlink" title="DenselyNet"></a>DenselyNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Ref："><a href="#Ref：" class="headerlink" title="Ref："></a>Ref：</h3><p><a href="https://blog.csdn.net/silent56_th/article/details/53456522" target="_blank" rel="noopener">https://blog.csdn.net/silent56_th/article/details/53456522</a> </p>
-
+        
       
     </div>
 
@@ -533,12 +458,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/deeplearning/" rel="tag"><i class="fa fa-tag"></i> deeplearning</a>
-          
-        </div>
-      
 
       
       
@@ -548,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/31/deeplearning/卷积神经网络复杂度/" rel="next" title="卷积神经网络复杂度">
-                <i class="fa fa-chevron-left"></i> 卷积神经网络复杂度
+              <a href="/2019/03/22/python/python基础1:基础知识/" rel="next" title="python基础1:基础知识">
+                <i class="fa fa-chevron-left"></i> python基础1:基础知识
               </a>
             
           </div>
@@ -557,10 +476,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/18/blog/Hexo搭建个人博客/" rel="prev" title="Hexo 搭建个人博客">
-                Hexo 搭建个人博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -608,17 +523,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -687,23 +593,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LeNet"><span class="nav-number">1.</span> <span class="nav-text">LeNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alexnet"><span class="nav-number">2.</span> <span class="nav-text">Alexnet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZFNet"><span class="nav-number">3.</span> <span class="nav-text">ZFNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG"><span class="nav-number">4.</span> <span class="nav-text">VGG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inception-V1"><span class="nav-number">5.</span> <span class="nav-text">Inception-V1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inception-V2"><span class="nav-number">6.</span> <span class="nav-text">Inception-V2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inception-V3"><span class="nav-number">7.</span> <span class="nav-text">Inception-V3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inception-V4"><span class="nav-number">8.</span> <span class="nav-text">Inception-V4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResNet"><span class="nav-number">9.</span> <span class="nav-text">ResNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResNeXt"><span class="nav-number">10.</span> <span class="nav-text">ResNeXt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SENet"><span class="nav-number">11.</span> <span class="nav-text">SENet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DenselyNet"><span class="nav-number">12.</span> <span class="nav-text">DenselyNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ref："><span class="nav-number">13.</span> <span class="nav-text">Ref：</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
