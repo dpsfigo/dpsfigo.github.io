@@ -1,4 +1,3 @@
-http://yfnotes.cn/2019/03/22/sample/
 http://yfnotes.cn/2019/03/22/python/python基础1:基础知识/
 http://yfnotes.cn/2019/03/20/blog/hexo个性化设置/
 http://yfnotes.cn/2019/03/18/blog/Hexo搭建个人博客/
