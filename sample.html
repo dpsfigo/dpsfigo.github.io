@@ -96,23 +96,18 @@
 
 
 
-  <meta name="description" content="1，获得个人域名直接去万网注册一个域名就行 2，创建Github个人仓库在github创建博客仓库，仓库的名字为：用户名.github.io。 3，安装依赖项使用npm命令安装Hexo，输入： 1npm install -g hexo-cli 安装完成后，可以在本地新建文件夹：web，初始化我们的博客，输入： 1hexo init blog 注意，这里的命令都是作用在刚刚创建的web文件夹中。 完">
+  <meta name="description" content="1：出现问题：ERROR Deployer not found: git解决办法：在blog文件夹下输入以下命令： 1npm install hexo-deployer-git --sav ref:GitHub+Hexo 搭建个人网站详细教程">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo 搭建个人博客">
+<meta property="og:title" content="sample">
 <meta property="og:url" content="http://yfnotes.cn/sample.html">
 <meta property="og:site_name" content="YF Notes">
-<meta property="og:description" content="1，获得个人域名直接去万网注册一个域名就行 2，创建Github个人仓库在github创建博客仓库，仓库的名字为：用户名.github.io。 3，安装依赖项使用npm命令安装Hexo，输入： 1npm install -g hexo-cli 安装完成后，可以在本地新建文件夹：web，初始化我们的博客，输入： 1hexo init blog 注意，这里的命令都是作用在刚刚创建的web文件夹中。 完">
+<meta property="og:description" content="1：出现问题：ERROR Deployer not found: git解决办法：在blog文件夹下输入以下命令： 1npm install hexo-deployer-git --sav ref:GitHub+Hexo 搭建个人网站详细教程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/blog1.png">
-<meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/blog2.png">
-<meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/blog3.png">
-<meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/blog4.png">
-<meta property="og:updated_time" content="2019-03-20T06:46:53.102Z">
+<meta property="og:updated_time" content="2019-03-22T07:37:39.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 搭建个人博客">
-<meta name="twitter:description" content="1，获得个人域名直接去万网注册一个域名就行 2，创建Github个人仓库在github创建博客仓库，仓库的名字为：用户名.github.io。 3，安装依赖项使用npm命令安装Hexo，输入： 1npm install -g hexo-cli 安装完成后，可以在本地新建文件夹：web，初始化我们的博客，输入： 1hexo init blog 注意，这里的命令都是作用在刚刚创建的web文件夹中。 完">
-<meta name="twitter:image" content="http://polpzrqzq.bkt.clouddn.com/blog1.png">
+<meta name="twitter:title" content="sample">
+<meta name="twitter:description" content="1：出现问题：ERROR Deployer not found: git解决办法：在blog文件夹下输入以下命令： 1npm install hexo-deployer-git --sav ref:GitHub+Hexo 搭建个人网站详细教程">
 
 
 
@@ -129,7 +124,7 @@
   };
 </script>
 
-  <title>Hexo 搭建个人博客 | YF Notes</title>
+  <title>sample | YF Notes</title>
   
 
 
@@ -358,7 +353,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Hexo 搭建个人博客
+<h1 class="post-title" itemprop="name headline">sample
 
 </h1>
 
@@ -378,62 +373,7 @@
       <div class="post-body">
         
         
-          <h3 id="1，获得个人域名"><a href="#1，获得个人域名" class="headerlink" title="1，获得个人域名"></a>1，获得个人域名</h3><p>直接去万网注册一个域名就行</p>
-<h3 id="2，创建Github个人仓库"><a href="#2，创建Github个人仓库" class="headerlink" title="2，创建Github个人仓库"></a>2，创建Github个人仓库</h3><p>在github创建博客仓库，仓库的名字为：用户名.github.io。</p>
-<h3 id="3，安装依赖项"><a href="#3，安装依赖项" class="headerlink" title="3，安装依赖项"></a>3，安装依赖项</h3><p>使用npm命令安装Hexo，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成后，可以在本地新建文件夹：web，初始化我们的博客，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-<p>注意，这里的命令都是作用在刚刚创建的web文件夹中。</p>
-<p>完成后，在web下会生成blog文件夹，依次输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">hexo new blog</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>会看到如下信息：</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/blog1.png" alt></p>
-<p>打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>, 可看到如下页面：</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/blog2.png" alt></p>
-<p>至此，hexo基本环境就配置好了</p>
-<h3 id="4，推送网站"><a href="#4，推送网站" class="headerlink" title="4，推送网站"></a>4，推送网站</h3><p>本地测试好了，就可以将网站推送到github pages了。</p>
-<p>修改站点配置文件_config.yml如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">- type: git</span><br><span class="line">  repository: https://github.com/dpsfigo/dpsfigo.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>重新部署，打开：http://你自己的地址.github.io,就可以看到自己的网站了。</p>
-<h3 id="5，域名绑定"><a href="#5，域名绑定" class="headerlink" title="5，域名绑定"></a>5，域名绑定</h3><p>查询github的IP地址，在<a href="http://github.com.ipaddress.com/" target="_blank" rel="noopener">这里</a>可以查询。</p>
-<p>打开阿里云管理控制台，解析自己申请的域名：</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/blog3.png" alt></p>
-<p>前两条为github的IP地址，第三条为自己的主页地址。或者ping 自己的github page地址，用获得的ip地址作为记录值。</p>
-<p>打开github里面的项目设置，找到custom domain，修改为自己的地址并保存。</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/blog4.png" alt></p>
-<p>都配置好后，打开自己的域名地址就可以看到blog了。</p>
-<h3 id="6，更换主题"><a href="#6，更换主题" class="headerlink" title="6，更换主题"></a>6，更换主题</h3><p>跟换最主流的next主题，在blog文件夹下输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开站点配置文件，修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>修改完后重新部署，即可看到更换主题后的博客了。</p>
-<p><strong>更新next主题</strong></p>
-<ul>
-<li><p>克隆新的 v6.x 仓库到任一异于 next 的目录（如 next-reloaded名称可以自定义）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next-v6</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后在 Hexo 的主配置文件中设置主题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next-v6</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>然后进入配置文件<code>_config.yml</code>,配置相关设置。</p>
-<h3 id="7，百度和google收录"><a href="#7，百度和google收录" class="headerlink" title="7，百度和google收录"></a>7，百度和google收录</h3><p>博客除了自己记录笔记之外，也想让其他人能够搜索到，此时需要博客域名被百度和google收录。google收录比较简单，尝试了很多种办法，终于搞定了百度收录。</p>
-<h4 id="安装sitemap插件"><a href="#安装sitemap插件" class="headerlink" title="安装sitemap插件"></a>安装sitemap插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save     </span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>修改站点配置文件，改成自己的域名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yfnotes.cn</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-<p>部署后会生成sitemap.xml和baidusitemap.xml两个文件</p>
-<h4 id="向百度提交链接"><a href="#向百度提交链接" class="headerlink" title="向百度提交链接"></a>向百度提交链接</h4><p>安装插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-baidu-url-submit --save</span><br></pre></td></tr></table></figure>
-<p>再在站点配置文件中添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">baidu_url_submit:</span><br><span class="line">  count: 100 # 提交最新的一个链接</span><br><span class="line">  host: www.yfnotes.cn # 在百度站长平台中注册的域名</span><br><span class="line">  token: 你自己的的token # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!</span><br><span class="line">  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里</span><br></pre></td></tr></table></figure>
-<p>再加入新的deploye</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> - type:baidu_url_submitter</span><br></pre></td></tr></table></figure>
-<p>这样每次deploy都时候就会自动推送了</p>
-<p>修改主题配置文件自动推送：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.</span><br><span class="line">baidu_push: true</span><br></pre></td></tr></table></figure>
-<h3 id="同时托管到github和coding"><a href="#同时托管到github和coding" class="headerlink" title="同时托管到github和coding"></a>同时托管到github和coding</h3><p>参考<a href="https://blog.csdn.net/sunshine940326/article/details/70936988" target="_blank" rel="noopener">hexo高阶教程：想让你的博客被更多的人在搜索引擎中搜到吗？</a></p>
-<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="1：出现问题：ERROR-Deployer-not-found-git"><a href="#1：出现问题：ERROR-Deployer-not-found-git" class="headerlink" title="1：出现问题：ERROR Deployer not found: git"></a>1：出现问题：ERROR Deployer not found: git</h4><p>解决办法：在blog文件夹下输入以下命令：</p>
+          <h4 id="1：出现问题：ERROR-Deployer-not-found-git"><a href="#1：出现问题：ERROR-Deployer-not-found-git" class="headerlink" title="1：出现问题：ERROR Deployer not found: git"></a>1：出现问题：ERROR Deployer not found: git</h4><p>解决办法：在blog文件夹下输入以下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --sav</span><br></pre></td></tr></table></figure>
 <h3 id="ref"><a href="#ref" class="headerlink" title="ref:"></a>ref:</h3><p><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a></p>
 
@@ -572,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1，获得个人域名"><span class="nav-number">1.</span> <span class="nav-text">1，获得个人域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2，创建Github个人仓库"><span class="nav-number">2.</span> <span class="nav-text">2，创建Github个人仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3，安装依赖项"><span class="nav-number">3.</span> <span class="nav-text">3，安装依赖项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4，推送网站"><span class="nav-number">4.</span> <span class="nav-text">4，推送网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5，域名绑定"><span class="nav-number">5.</span> <span class="nav-text">5，域名绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6，更换主题"><span class="nav-number">6.</span> <span class="nav-text">6，更换主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7，百度和google收录"><span class="nav-number">7.</span> <span class="nav-text">7，百度和google收录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装sitemap插件"><span class="nav-number">7.1.</span> <span class="nav-text">安装sitemap插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向百度提交链接"><span class="nav-number">7.2.</span> <span class="nav-text">向百度提交链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同时托管到github和coding"><span class="nav-number">8.</span> <span class="nav-text">同时托管到github和coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题："><span class="nav-number">9.</span> <span class="nav-text">问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1：出现问题：ERROR-Deployer-not-found-git"><span class="nav-number">9.1.</span> <span class="nav-text">1：出现问题：ERROR Deployer not found: git</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ref"><span class="nav-number">10.</span> <span class="nav-text">ref:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1：出现问题：ERROR-Deployer-not-found-git"><span class="nav-number">1.</span> <span class="nav-text">1：出现问题：ERROR Deployer not found: git</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#ref"><span class="nav-number"></span> <span class="nav-text">ref:</span></a></li></div>
             
 
           </div>
