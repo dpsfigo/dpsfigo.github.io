@@ -100,26 +100,26 @@
 <meta name="keywords" content="deeplearning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卷积的各种实现原理">
-<meta property="og:url" content="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/index.html">
+<meta property="og:url" content="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/index.html">
 <meta property="og:site_name" content="YF Notes">
 <meta property="og:description" content="caffe 中卷积实现如下图所示：  图解如下：    假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$], 随着卷积核的滑动，生成一个Feature Matrix，尺寸为[$H_{o}·W_{o}$，$C·K·K$], 此处$H_{o},W_{o}$与$H,W$不相等,$$H_{o} = (H+2*pa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
-<meta property="og:image" content="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-1.png">
-<meta property="og:image" content="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-2.png">
-<meta property="og:image" content="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-3.jpg">
+<meta property="og:image" content="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
+<meta property="og:image" content="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-1.png">
+<meta property="og:image" content="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-2.png">
+<meta property="og:image" content="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-3.jpg">
 <meta property="og:updated_time" content="2018-10-17T08:29:09.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积的各种实现原理">
 <meta name="twitter:description" content="caffe 中卷积实现如下图所示：  图解如下：    假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$], 随着卷积核的滑动，生成一个Feature Matrix，尺寸为[$H_{o}·W_{o}$，$C·K·K$], 此处$H_{o},W_{o}$与$H,W$不相等,$$H_{o} = (H+2*pa">
-<meta name="twitter:image" content="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
+<meta name="twitter:image" content="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/">
+  <link rel="canonical" href="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/">
 
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/">
+    <link itemprop="mainEntityOfPage" href="http://www.yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yf">
