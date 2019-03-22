@@ -720,6 +720,978 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yfnotes.cn/2018/11/05/deeplearning/经典网络/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yf">
+      <meta itemprop="description" content="carpe diem,seize the day!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YF Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/05/deeplearning/经典网络/" class="post-title-link" itemprop="url">经典网络</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-05 10:39:37" itemprop="dateCreated datePublished" datetime="2018-11-05T10:39:37+08:00">2018-11-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-07 11:38:57" itemprop="dateModified" datetime="2018-11-07T11:38:57+08:00">2018-11-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/11/05/deeplearning/经典网络/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/05/deeplearning/经典网络/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>模型特点</strong></p>
+<p>输出表述是将给定的label转换为一个向量，作为神经网络的真值。传统常见的方法为1 of N，这里不在赘述。<br>文章中是把图片对应的字符在7x12的bitmap上画出，白值为-1，黑值为1，其中84个像素平铺之后的向量对应为相应字符的表述，作为真值与F6连接。这样做的优点有： </p>
+<ol>
+<li>对于识别全打印的ASCII字符有用（单独数字无用） </li>
+<li>外表相近的字符如”i”和”1”等在这种表述中也相近，这样在神经网络之后加入个依靠语义更正的系统，可以提高准确率。 </li>
+<li>1 of N的表述在N大于几十的时候就会表现不好。 </li>
+<li>这样的表示可以用于拒绝非字符，而不是所有的都识别为字符。<br>设置“白值为-1，黑值为1”的原因是为了把函数限定在sigmoid函数斜率较大的区域，否则收敛较慢，而且会ill-conditioning。这个1的选择是由A得出，使得sigmoid的二次导最大（作者的猜测，还没有看论文验证））</li>
+</ol>
+<p>LeNet在输出层之前最后一个全连接层的大小设为84，是希望每一维特征分别提现标准7*12大小为图上每一个像素点的特性。</p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="Alexnet"><a href="#Alexnet" class="headerlink" title="Alexnet"></a>Alexnet</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="ZFNet"><a href="#ZFNet" class="headerlink" title="ZFNet"></a>ZFNet</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="Inception-V1"><a href="#Inception-V1" class="headerlink" title="Inception-V1"></a>Inception-V1</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="Inception-V2"><a href="#Inception-V2" class="headerlink" title="Inception-V2"></a>Inception-V2</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="Inception-V3"><a href="#Inception-V3" class="headerlink" title="Inception-V3"></a>Inception-V3</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception-V4"></a>Inception-V4</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="ResNeXt"><a href="#ResNeXt" class="headerlink" title="ResNeXt"></a>ResNeXt</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="SENet"><a href="#SENet" class="headerlink" title="SENet"></a>SENet</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="DenselyNet"><a href="#DenselyNet" class="headerlink" title="DenselyNet"></a>DenselyNet</h3><p><strong>网络结构图</strong></p>
+<p><strong>网络的参数</strong></p>
+<p><strong>贡献点</strong></p>
+<p><strong>结论</strong></p>
+<h3 id="Ref："><a href="#Ref：" class="headerlink" title="Ref："></a>Ref：</h3><p><a href="https://blog.csdn.net/silent56_th/article/details/53456522" target="_blank" rel="noopener">https://blog.csdn.net/silent56_th/article/details/53456522</a> </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yfnotes.cn/2018/10/31/deeplearning/卷积神经网络复杂度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yf">
+      <meta itemprop="description" content="carpe diem,seize the day!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YF Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/31/deeplearning/卷积神经网络复杂度/" class="post-title-link" itemprop="url">卷积神经网络复杂度</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-31 14:25:16" itemprop="dateCreated datePublished" datetime="2018-10-31T14:25:16+08:00">2018-10-31</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-05 09:48:59" itemprop="dateModified" datetime="2018-11-05T09:48:59+08:00">2018-11-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/10/31/deeplearning/卷积神经网络复杂度/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/31/deeplearning/卷积神经网络复杂度/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CNN时间复杂度"><a href="#CNN时间复杂度" class="headerlink" title="CNN时间复杂度"></a>CNN时间复杂度</h2><h4 id="单个卷积层的时间复杂度"><a href="#单个卷积层的时间复杂度" class="headerlink" title="单个卷积层的时间复杂度"></a>单个卷积层的时间复杂度</h4><p>$$Time:  O(M^2·K^2·C_{in}·C_{out})$$</p>
+<p>$M:$每个卷积核输出特征图的边长</p>
+<p>$K:​$每个卷积核的边长</p>
+<p>$C_{in}:$输入通道数</p>
+<p>$C_{out}:$输出通道数</p>
+<p>$M$又和图片尺寸$X$有关：</p>
+<p>$$M = (X-stride+2*padding)/stride +1$$</p>
+<h4 id="多个卷积层的时间复杂度"><a href="#多个卷积层的时间复杂度" class="headerlink" title="多个卷积层的时间复杂度"></a>多个卷积层的时间复杂度</h4><p>$$Time:  O(\sum_{l=1}^{n}M^2_{l}·K^2_{l}·C_{l-1}·C_{l})$$</p>
+<ul>
+<li>$n:$ 神经网络所具有的卷积层数，也即<strong>网络的深度</strong>。</li>
+<li>$l:$神经网络第 $l$ 个卷积层</li>
+<li>$C_{l}$ 神经网络第 $l$ 个卷积层的输出通道数 <img src="https://www.zhihu.com/equation?tex=C_%7Bout%7D" alt="C_{out}"> ，也即该层的卷积核个数。</li>
+<li>对于第 <img src="https://www.zhihu.com/equation?tex=l" alt="l"> 个卷积层而言，其输入通道数 <img src="https://www.zhihu.com/equation?tex=C_%7Bin%7D" alt="C_{in}"> 就是第 <img src="https://www.zhihu.com/equation?tex=%28l+-+1%29" alt="(l - 1)"> 个卷积层的输出通道数。</li>
+<li>可见，CNN整体的时间复杂度并不神秘，只是所有卷积层的时间复杂度累加而已。</li>
+<li>简而言之，层内连乘，层间累加。</li>
+</ul>
+<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>$$Space:  O(\sum_{l=1}^{n}K^2_{l}·C_{l-1}·C_{l}+\sum_{l=1}^{n}M^2_{l}·C_{l})$$</p>
+<ul>
+<li>总参数量只与卷积核的尺寸 <img src="https://www.zhihu.com/equation?tex=K" alt="K"> 、通道数 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 、层数 <img src="https://www.zhihu.com/equation?tex=D" alt="D"> 相关，而<strong>与输入数据的大小无关</strong>。</li>
+<li>输出特征图的空间占用比较容易，就是其空间尺寸 <img src="https://www.zhihu.com/equation?tex=M%5E2" alt="M^2"> 和通道数 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 的连乘</li>
+</ul>
+<h2 id="复杂度对模型的影响"><a href="#复杂度对模型的影响" class="headerlink" title="复杂度对模型的影响"></a>复杂度对模型的影响</h2><ul>
+<li>时间复杂度决定了模型的训练/预测时间。如果复杂度过高，则会导致模型训练和预测耗费大量时间，既无法快速的验证想法和改善模型，也无法做到快速的预测。</li>
+<li>空间复杂度决定了模型的参数数量。由于维度诅咒的限制，模型的参数越多，训练模型所需的数据量就越大，而现实生活中的数据集通常不会太大，这会导致模型的训练更容易过拟合。</li>
+<li>当我们需要裁剪模型时，由于卷积核的空间尺寸通常已经很小（3x3），而网络的深度又与模型的表征能力紧密相关，不宜过多削减，因此模型裁剪通常最先下手的地方就是通道数。</li>
+</ul>
+<h3 id="Ref："><a href="#Ref：" class="headerlink" title="Ref："></a>Ref：</h3><p><a href="https://zhuanlan.zhihu.com/p/31575074" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31575074</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yfnotes.cn/2018/10/25/algorithm/常见排序算法python实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yf">
+      <meta itemprop="description" content="carpe diem,seize the day!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YF Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/25/algorithm/常见排序算法python实现/" class="post-title-link" itemprop="url">常见排序算法python实现</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-25 15:54:04" itemprop="dateCreated datePublished" datetime="2018-10-25T15:54:04+08:00">2018-10-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-26 00:02:51" itemprop="dateModified" datetime="2018-10-26T00:02:51+08:00">2018-10-26</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/10/25/algorithm/常见排序算法python实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/25/algorithm/常见排序算法python实现/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>&emsp;&emsp;插入排序（Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到 O(1)O(1) 的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间</p>
+<p><strong>算法描述</strong></p>
+<ol>
+<li>从第一个元素开始，该元素可以认为已经被排序</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
+<li>将新元素插入到该位置后</li>
+<li>重复步骤2~5</li>
+</ol>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。</p>
+<p><strong>算法描述</strong></p>
+<ol>
+<li>初始状态：无序区为R[1..n]，有序区为空；</li>
+<li>第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中选出关键字最小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</li>
+<li>n-1趟结束，数组有序化了</li>
+</ol>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>&emsp;&emsp;冒泡排序(Bubble Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元nn个项目需要O(n2)O(n2) 的比较次数，且可以原地排序。尽管这个算法是最简单了解和实现的排序算法之一，但它对于包含大量的元素的数列排序是很没有效率的</p>
+<p><strong>算法描述：</strong> </p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。 </li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 </li>
+<li>针对所有的元素重复以上的步骤，除了最后一个 </li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较</li>
+</ol>
+<hr>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>&emsp;&emsp;快速排序（Quicksort），在平均状况下，排序 nn 个项目要 O(nlogn)O(nlog⁡n)）次比较。在最坏状况下则需要 O(n2)O(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他 O(nlogn)O(nlog⁡n) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出</p>
+<p><strong>算法描述：</strong><br>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists） </p>
+<ol>
+<li>从数列中挑出一个元素，称为”基准”（pivot） </li>
+<li>重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任何一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作 </li>
+<li>递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序</li>
+</ol>
+<hr>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>&emsp;&emsp;归并排序（mergesort），是创建在归并操作上的一种有效的排序算法，效率为 O(nlogn)O(nlog⁡n)。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行</p>
+<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><p><strong>迭代法</strong> </p>
+<ol>
+<li>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列 </li>
+<li>设定两个指针，最初位置分别为两个已经排序序列的起始位置 </li>
+<li>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置 </li>
+<li>重复步骤3直到某一指针到达序列尾 </li>
+<li>将另一序列剩下的所有元素直接复制到合并序列尾</li>
+</ol>
+<p><strong>递归法</strong> </p>
+<ol>
+<li>将序列每相邻两个数字进行归并操作，形成 ceil(n/2)ceil(n/2) 个序列，排序后每个序列包含两/一个元素 </li>
+<li>若此时序列数不是1个则将上述序列再次归并，形成 ceil(n/4)ceil(n/4) 个序列，每个序列包含四/三个元素 </li>
+<li>重复步骤2，直到所有元素排序完毕，即序列数为1</li>
+</ol>
+<hr>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>&emsp;&emsp;希尔排序(Shell Sort)是插入排序的一种。也称缩小增量排序，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yfnotes.cn/2018/10/23/algorithm/二叉树遍历/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yf">
+      <meta itemprop="description" content="carpe diem,seize the day!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YF Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/23/algorithm/二叉树遍历/" class="post-title-link" itemprop="url">二叉树遍历</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-23 15:54:04 / 修改时间：16:25:03" itemprop="dateCreated datePublished" datetime="2018-10-23T15:54:04+08:00">2018-10-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/10/23/algorithm/二叉树遍历/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/algorithm/二叉树遍历/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>二叉树遍历分为：先序遍历、中序遍历、后续遍历</p>
+<p>先序：1.访问根结点</p>
+<p>　　　2.访问左子树</p>
+<p>　　　3.访问右子树</p>
+<p>中序：1.访问左子树</p>
+<p>　　　2.访问根结点</p>
+<p>　　　3.访问右子树</p>
+<p>后序：1.访问左子树</p>
+<p>　　　2.访问右子树</p>
+<p>　　　3.访问根结点</p>
+<p>深度优先遍历（DFS）：先序遍历</p>
+<p>广度优先遍历（BFS）：层次遍历</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yf">
+      <meta itemprop="description" content="carpe diem,seize the day!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YF Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/17/deeplearning/卷积的各种实现原理/" class="post-title-link" itemprop="url">卷积的各种实现原理</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-17 11:31:59 / 修改时间：16:29:09" itemprop="dateCreated datePublished" datetime="2018-10-17T11:31:59+08:00">2018-10-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/10/17/deeplearning/卷积的各种实现原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/17/deeplearning/卷积的各种实现原理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>caffe 中卷积实现如下图所示：</p>
+<p><img src="卷积的各种实现原理/conv-in-caffe-naive-loop.png" alt></p>
+<p>图解如下：</p>
+<p><img src="卷积的各种实现原理/conv-in-caffe-im2col-1.png" alt></p>
+<p><img src="卷积的各种实现原理/conv-in-caffe-im2col-2.png" alt></p>
+<p><img src="卷积的各种实现原理/conv-in-caffe-im2col-3.jpg" alt></p>
+<p>假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$], 随着卷积核的滑动，生成一个Feature Matrix，尺寸为[$H_{o}·W_{o}$，$C·K·K$], 此处$H_{o},W_{o}$与$H,W$不相等,$$H_{o} = (H+2*padding)/stride+1$$, 同理$W_{o}$</p>
+<p>对卷积核做同样的处理，将其拉伸成一列，尺寸为[1, $C·K·K$]，假设有$C_{out}$个卷积核，则Filter Matrix的尺寸为：[$C_{out}, C·K·K$]。</p>
+<p>我们记图像那个矩阵是$A$，记卷积那个矩阵是$F$。那么，对于第$i$个卷积核来说，它现在实际上是$F$里面的第$i$个行向量。为了计算它在原来图像上的各个位置的卷积，现在我们需要它和矩阵$A$,中的每行做点积。也就是 $F_i <em> [A_1^T, A_2^T, … A_i^T]$ （也就是$A$的转置）。推广到其他的卷积核，就是说，最后的结果是$F</em>A^T$.</p>
+<p>由$F = Wx+b$可知，记$x =  [H_{o}·W_{o}，C·K·K$], $W = [C_{out}, C·K·K]$,则输出为：<br>$$<br>F = [C_{out}, C·K·K]·[H_{o}·W_{o}，C·K·K]^{T} + b=[C_{out},H_{o}·W_{o}]+b<br>$$</p>
+<p><strong>Ref:</strong></p>
+<p><a href="https://xmfbit.github.io/2018/02/26/conv-in-caffe/" target="_blank" rel="noopener">Caffe中卷积的大致实现思路</a></p>
+<p><a href="https://www.zhihu.com/question/28385679" target="_blank" rel="noopener">在 Caffe 中如何计算卷积？</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -762,7 +1734,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -779,7 +1751,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
