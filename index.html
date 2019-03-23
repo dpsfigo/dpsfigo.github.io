@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +70,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -638,16 +638,16 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-22 17:07:47" itemprop="dateModified" datetime="2019-03-22T17:07:47+08:00">2019-03-22</time>
+                <time title="修改时间：2019-03-22 18:48:02" itemprop="dateModified" datetime="2019-03-22T18:48:02+08:00">2019-03-22</time>
               
             
 
             
               <span class="post-letters-count">
                 &nbsp; | &nbsp;
-                <span>字数统计: 619 字</span>
+                <span>字数统计: 899 字</span>
                 &nbsp; | &nbsp;
-                <span>阅读时长: 3 分钟</span>
+                <span>阅读时长: 4 分钟</span>
               </span>
             
 
@@ -721,6 +721,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.word_count %&#125;</span><br><span class="line">  &lt;span class=&quot;post-letters-count&quot;&gt;</span><br><span class="line">    &amp;nbsp; | &amp;nbsp;</span><br><span class="line">    &lt;span&gt;&#123;&#123; wordcount(post.content) &#125;&#125; 字&lt;/span&gt;</span><br><span class="line">    &amp;nbsp; | &amp;nbsp;</span><br><span class="line">    &lt;span&gt;&#123;&#123; min2read(post.content) &#125;&#125; min&lt;/span&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="修改-footer-swig"><a href="#修改-footer-swig" class="headerlink" title="修改 footer.swig"></a>修改 footer.swig</h3><p>想要在页面底部网站信息处显示字数统计，就要修改 <code>themes/next/layout/_partial/footer.swig</code>，在文件的最后添加如下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;theme-info&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;powered-by&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;span class=&quot;post-count&quot;&gt;共&#123;&#123; totalcount(site) &#125;&#125;字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="7，添加背景图片"><a href="#7，添加背景图片" class="headerlink" title="7，添加背景图片"></a>7，添加背景图片</h2><h3 id="修改背景样式"><a href="#修改背景样式" class="headerlink" title="修改背景样式"></a>修改背景样式</h3><p>修改themes\next\source\css\ _custom\custom.styl文件，这个是Next故意留给用户自己个性化定制一些样式的文件，添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background:url(https://source.unsplash.com/random/1600x900);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果自己不喜欢这个网址提供的图片做背景，那么修改url()里面的路径即可。repeat、attachment、position就是调整图片的位置，不重复出现、不滚动等等。</p>
+<h3 id="修改不透明度"><a href="#修改不透明度" class="headerlink" title="修改不透明度"></a>修改不透明度</h3><p>完成这一步其实背景就会自动更换了，但是会出现一个问题，因为next主题的背景是纯透明的，这样子就造成背景图片的影响看不见文字，这对于博客来说肯定不行。</p>
+<p>那么就需要调整背景的不透明度了。同样是修改themes\next\source\css\ _custom\custom.styl文件。在后面添加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.main-inner &#123; </span><br><span class="line">    margin-top: 60px;</span><br><span class="line">    padding: 60px 60px 60px 60px;</span><br><span class="line">    background: #fff;</span><br><span class="line">    opacity: 0.8;</span><br><span class="line">    min-height: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>background: #fff; 白色</li>
+<li>opacity: 0.8;不透明度</li>
+</ul>
 <h2 id="ref："><a href="#ref：" class="headerlink" title="ref："></a>ref：</h2><p><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></p>
 
           
@@ -2342,13 +2352,13 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.1</div>
 
 -->
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共4.9k字</span>
+  <span class="post-count">全站共5.2k字</span>
 </div>
 
         
@@ -2461,6 +2471,7 @@
 
 
   <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
 
 
 
