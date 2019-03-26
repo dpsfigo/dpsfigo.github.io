@@ -1843,7 +1843,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff3682;
+  background: #8b3309;
 }
 .links-of-blogroll {
   margin-top: 10px;
@@ -2379,7 +2379,7 @@ hr {
   margin-top: 80px;
 }
 .header {
-  background: url("../images/header.jpg");
+  background: #f5f5f5;
 }
 .header-inner {
   padding: 20px 0;
