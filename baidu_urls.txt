@@ -1,8 +1,8 @@
+http://yfnotes.cn/2019/03/28/python/python基础2:字符串/
 http://yfnotes.cn/2019/03/28/字符串、列表、元组、字典/
 http://yfnotes.cn/2019/03/22/python/python基础1:基础知识/
 http://yfnotes.cn/2019/03/20/blog/hexo个性化设置/
 http://yfnotes.cn/2019/03/19/sample/
-http://yfnotes.cn/2019/03/18/python/python基础2:字符串、列表、元组、字典/
 http://yfnotes.cn/2019/03/18/blog/Hexo搭建个人博客/
 http://yfnotes.cn/2018/11/05/deeplearning/经典网络/
 http://yfnotes.cn/2018/10/31/deeplearning/卷积神经网络复杂度/
