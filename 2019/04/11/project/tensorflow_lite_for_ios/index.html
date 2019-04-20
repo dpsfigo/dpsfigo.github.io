@@ -104,14 +104,14 @@
 <meta property="og:site_name" content="YF Notes">
 <meta property="og:description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.git#cd tensorflow#git checkout r1.13 使用最新版的tf，否则后面会报错 下载依赖项">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/source/_post/project/tensorflow_lite_for_ios/grace_hopper.jpg">
+<meta property="og:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg">
 <meta property="og:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg">
 <meta property="og:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/tensorflow_liet_for_ios_2.png">
-<meta property="og:updated_time" content="2019-04-20T11:20:15.361Z">
+<meta property="og:updated_time" content="2019-04-20T11:43:58.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mtcnn 编译tensorflow lite for ios">
 <meta name="twitter:description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.git#cd tensorflow#git checkout r1.13 使用最新版的tf，否则后面会报错 下载依赖项">
-<meta name="twitter:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/source/_post/project/tensorflow_lite_for_ios/grace_hopper.jpg">
+<meta name="twitter:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg">
 
 
 
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-20 19:20:15" itemprop="dateModified" datetime="2019-04-20T19:20:15+08:00">2019-04-20</time>
+                <time title="修改时间：2019-04-20 19:43:58" itemprop="dateModified" datetime="2019-04-20T19:43:58+08:00">2019-04-20</time>
               
             
 
@@ -500,10 +500,18 @@
 <p>运行的时候可能涉及到权限问题，在<strong>通用-&gt;设备管理-&gt;开发者信任</strong>里面点信任就可以了.</p>
 <p>也可以用模拟器，结果如下：</p>
 <p>原始图片：</p>
-<img src="/2019/04/11/project/tensorflow_lite_for_ios/source/_post/project/tensorflow_lite_for_ios/grace_hopper.jpg" width="600" height="400" title="卧室（指定尺寸）">
-<p><img src="/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg" alt></p>
+<div style="width: 200px; margin: auto"><img src="/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg" alt></div>
+
+<p><img style="display: block; margin: 0 auto;" src="/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg" class="full-image" width="180" height="180" title="hello"></p>
 <p>输出结果：</p>
-<p><img src="/2019/04/11/project/tensorflow_lite_for_ios/tensorflow_liet_for_ios_2.png" alt="tensorflow_liet_for_ios_2.png"></p>
+<div style="width: 200px; margin: auto"><img src="/2019/04/11/project/tensorflow_lite_for_ios/tensorflow_liet_for_ios_2.png" alt></div>
+
+
+
+
+
+
+
 <h2 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h2><p><strong>1.cannot find “flatbuffers/flatbuffers.h” head file</strong></p>
 <p>因为下载依赖项的时候可能没下载完，从新下载一遍，看到download completed后就可以了。</p>
 <p><strong>2.tensorflow.python.framework.errors_impl.NotFoundError:dlopen(/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow/contrib/bigtable/python/ops/_bigtable.so, 6): Symbol not found: </strong></p>
