@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +70,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -449,9 +449,20 @@
       
         
           
-            <p>linux测试系统时间用<strong>gettimeofday</strong>函数，不要用<strong>clock</strong>函数，clock函数</p>
+            <p>
+              linux测试系统时间用gettimeofday函数，不要用clock函数，clock函数
 
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/12/cpp/linux测试系统时间/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -616,10 +627,21 @@
       
         
           
-            <p>string 转 int：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::stoi( str )</span><br></pre></td></tr></table></figure>
+            <p>
+              string 转 int：
+std::stoi( str )
 
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/12/cpp/字符类型转换/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -796,59 +818,21 @@
       
         
           
-            <h3 id="1，安装依赖项："><a href="#1，安装依赖项：" class="headerlink" title="1，安装依赖项："></a>1，安装依赖项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install automake</span><br><span class="line">brew install libtool</span><br></pre></td></tr></table></figure>
-<h3 id="2-下载tensorflow源码"><a href="#2-下载tensorflow源码" class="headerlink" title="2, 下载tensorflow源码"></a>2, 下载tensorflow源码</h3><p>1.13后源码里买呢才有lite</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/tensorflow/tensorflow.git</span><br><span class="line">#cd tensorflow</span><br><span class="line">#git checkout r1.13 使用最新版的tf，否则后面会报错</span><br></pre></td></tr></table></figure>
-<p>下载依赖项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/lite/tools/make/download_dependencies.sh</span><br></pre></td></tr></table></figure>
-<p>下载完的内容会放到：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/lite/downloads</span><br></pre></td></tr></table></figure>
-<p>编译ios库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># tf 1.13</span><br><span class="line">tensorflow/contrib/lite/build_ios_universal_lib.sh </span><br><span class="line"># tf 2.0</span><br><span class="line">tensorflow/lite/tools/make/build_ios_universal_lib.sh</span><br></pre></td></tr></table></figure>
-<p>编译完后会放到：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/lite/tools/make/gen</span><br></pre></td></tr></table></figure>
-<h3 id="3，mtcnn生成tflite文件"><a href="#3，mtcnn生成tflite文件" class="headerlink" title="3，mtcnn生成tflite文件"></a>3，mtcnn生成tflite文件</h3><p>tf版本：1.13.1</p>
-<p>numpy: 1.16.2</p>
-<p>具体可参考<a href="https://github.com/jiangxiluning/facenet_mtcnn_to_mobile" target="_blank" rel="noopener"><strong>facenet_mtcnn_to_mobile</strong></a></p>
-<h3 id="4，-CocoaPods安装"><a href="#4，-CocoaPods安装" class="headerlink" title="4， CocoaPods安装"></a>4， CocoaPods安装</h3><p>首先查看ruby的源：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">macbook-figo:ios figo$ gem sources -l</span><br><span class="line">/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/2.3.0/universal-darwin18/rbconfig.rb:214: warning: Insecure world writable dir /Users/figo in PATH, mode 040777</span><br><span class="line">*** CURRENT SOURCES ***</span><br><span class="line"></span><br><span class="line">https://ruby.taobao.org/</span><br></pre></td></tr></table></figure>
-<p>跟换ruby的源：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gem sources --remove https://ruby.taobao.org/</span><br><span class="line"></span><br><span class="line">gem sources --add https://gems.ruby-china.com/</span><br></pre></td></tr></table></figure>
-<p>否则可能出现如下错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR:  Could not find a valid gem &apos;cocoapods&apos; (&gt;= 0), here is why:</span><br><span class="line">          Unable to download data from https://ruby.taobao.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://ruby.taobao.org/specs.4.8.gz)</span><br></pre></td></tr></table></figure>
-<p>安装CocoaPods：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install -n cocoapods</span><br></pre></td></tr></table></figure>
-<h3 id="5，编译ios工程"><a href="#5，编译ios工程" class="headerlink" title="5，编译ios工程"></a>5，编译ios工程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd tensorflow/lite/examples/ios/simple</span><br><span class="line">pod install</span><br></pre></td></tr></table></figure>
-<p>如果不成功，更新一下pod</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo update</span><br></pre></td></tr></table></figure>
-<p>这个过程可能比较慢，耐心等待。</p>
-<p>更新完了，会生成<strong>simple.xcworkspace</strong>文件，打开该文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open simple.xcworkspace</span><br></pre></td></tr></table></figure>
-<p>运行的时候可能涉及到权限问题，在<strong>通用-&gt;设备管理-&gt;开发者信任</strong>里面点信任就可以了.</p>
-<p>也可以用模拟器，结果如下：</p>
-<p>原始图片：</p>
-<p><img src="/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg" alt></p>
-<p>输出结果：</p>
-<p><img src="/2019/04/11/project/tensorflow_lite_for_ios/tensorflow_liet_for_ios_2.png" alt="tensorflow_liet_for_ios_2.png"></p>
-<h2 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h2><p><strong>1.cannot find “flatbuffers/flatbuffers.h” head file</strong></p>
-<p>因为下载依赖项的时候可能没下载完，从新下载一遍，看到download completed后就可以了。</p>
-<p><strong>2.tensorflow.python.framework.errors_impl.NotFoundError:dlopen(/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow/contrib/bigtable/python/ops/_bigtable.so, 6): Symbol not found: </strong></p>
-<p>tensorflow的版本不对，更新到1.13.1就可以了</p>
-<p><strong>3. ImportError: numpy.core._multiarray_umath failed to import</strong></p>
-<p>更新numpy到1.16.2，完美解决</p>
-<p><strong>4， no module named ‘click’</strong></p>
-<p>安装click：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install click</span><br></pre></td></tr></table></figure>
-<p><strong>5, Op builtin_code out of range: 101. Are you using old TFLite binary with newer model?</strong></p>
-<p>生成的tflite模型里面的操作在tflite库里面没有，相当于用了新的模型但是用了旧的库，升级tensorflow到最新版</p>
-<p><strong>6, num_input_elements != num_output_elements (223050 != 233050),Node number 26 (RESHAPE) failed to prepare.</strong></p>
-<p>调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (input_layer_type != &quot;string&quot;) &#123;</span><br><span class="line">    interpreter-&gt;ResizeInputTensor(input, sizes);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (interpreter-&gt;AllocateTensors() != kTfLiteOk) &#123;</span><br><span class="line">    NSLog(@&quot;Failed to allocate tensors.&quot;);</span><br><span class="line">    exit(-1);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>的时候报错，是因为图片的输入尺寸和tflite的输入尺寸不一致导致的，修改 size和tflite的输入尺寸一致。</p>
-<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref:"></a>Ref:</h3><p><a href="https://www.jianshu.com/p/fa204a54a956" target="_blank" rel="noopener">TensorFlow Lite学习笔记2：生成TFLite模型文件</a></p>
-<p><a href="https://www.ctolib.com/jiangxiluning-facenet_mtcnn_to_mobile.html" target="_blank" rel="noopener">使用 TFLite 将 FaceNet 和 MTCNN 移植到移动端</a></p>
-
+            <p>
+              1，安装依赖项：brew install automakebrew install libtool
+2, 下载tensorflow源码1.13后源码里买呢才有lite
+git clone https:
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/11/project/tensorflow_lite_for_ios/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1025,93 +1009,20 @@
       
         
           
-            <h2 id="1，切片"><a href="#1，切片" class="headerlink" title="1，切片"></a>1，切片</h2><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
-<h4 id="切片的语法：-起始-结束-步长"><a href="#切片的语法：-起始-结束-步长" class="headerlink" title="切片的语法：[起始:结束:步长]"></a>切片的语法：[起始:结束:步长]</h4><p><strong>注意：选取的区间属于左闭右开型，即从”起始”位开始，到”结束”位的前一位结束（不包含结束位本身)。</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name = <span class="string">'abcdef'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(name[<span class="number">0</span>:<span class="number">3</span>]) <span class="comment"># 取 下标0~2 的字符</span></span><br><span class="line">abc </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[:<span class="number">3</span>]</span><br><span class="line"><span class="string">'abc'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[::<span class="number">2</span>]</span><br><span class="line"><span class="string">'ace'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">5</span>:<span class="number">1</span>:<span class="number">2</span>] </span><br><span class="line"><span class="string">''</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>:<span class="number">5</span>:<span class="number">2</span>]</span><br><span class="line"><span class="string">'bd'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[::<span class="number">-2</span>]</span><br><span class="line"><span class="string">'fdb'</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">5</span>:<span class="number">1</span>:<span class="number">-2</span>]</span><br><span class="line"><span class="string">'fd'</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-字符串常见操作"><a href="#2-字符串常见操作" class="headerlink" title="2,字符串常见操作"></a>2,字符串常见操作</h2><p>如有字符串<code>mystr = &#39;hello world itcast and itcastcpp&#39;</code>，以下是常见的操作</p>
-<h4 id="find"><a href="#find" class="headerlink" title="find"></a><1>find</1></h4><p>检测 str 是否包含在 mystr中，如果是返回开始的索引值，否则返回-1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.find(str, start=0, end=len(mystr))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'hello world itcast and itcastcpp'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.find(<span class="string">"itcast"</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.find(<span class="string">"itcast"</span>,<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"><span class="number">-1</span></span><br></pre></td></tr></table></figure>
-<h4 id="index"><a href="#index" class="headerlink" title="index"></a><2>index</2></h4><p>跟find()方法一样，只不过如果str不在 mystr中会报一个异常.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.index(str, start=0, end=len(mystr))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.index(<span class="string">"itcast"</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.index(<span class="string">"itcast"</span>,<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: substring <span class="keyword">not</span> found</span><br></pre></td></tr></table></figure>
-<h4 id="count"><a href="#count" class="headerlink" title="count"></a><3>count</3></h4><p>返回 str在start和end之间 在 mystr里面出现的次数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.count(str, start=0, end=len(mystr))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.count(<span class="string">"itcast"</span>)</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-<h4 id="replace"><a href="#replace" class="headerlink" title="replace"></a><4>replace</4></h4><p>把 mystr 中的 str1 替换成 str2,如果 count 指定，则替换不超过 count 次.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.replace(str1, str2,  mystr.count(str1))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.replace(<span class="string">"itcast"</span>,<span class="string">"ha"</span>)</span><br><span class="line"><span class="string">'hello world ha and hacpp'</span></span><br></pre></td></tr></table></figure>
-<h4 id="split"><a href="#split" class="headerlink" title="split"></a><5>split</5></h4><p>以 str 为分隔符切片 mystr，如果 maxsplit有指定值，则仅分隔 maxsplit 个子字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.split(str=&quot; &quot;, 2)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.split(<span class="string">" "</span>)</span><br><span class="line">[<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="string">'itcast'</span>, <span class="string">'and'</span>, <span class="string">'itcastcpp'</span>]</span><br></pre></td></tr></table></figure>
-<h4 id="capitalize"><a href="#capitalize" class="headerlink" title="capitalize"></a><6>capitalize</6></h4><p>把字符串的第一个字符大写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.capitalize()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.capitalize()</span><br><span class="line"><span class="string">'Hello world itcast and itcastcpp'</span></span><br></pre></td></tr></table></figure>
-<h4 id="title"><a href="#title" class="headerlink" title="title"></a><7>title</7></h4><p>把字符串的每个单词首字母大写</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">"hello itcast"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.title()</span><br><span class="line"><span class="string">'Hello Itcast'</span></span><br></pre></td></tr></table></figure>
-<h4 id="startswith"><a href="#startswith" class="headerlink" title="startswith"></a><8>startswith</8></h4><p>检查字符串是否是以 obj 开头, 是则返回 True，否则返回 False</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.startswith(obj)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.startswith(<span class="string">"hello"</span>)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<h4 id="endswith"><a href="#endswith" class="headerlink" title="endswith"></a><9>endswith</9></h4><p>检查字符串是否以obj结束，如果是返回True,否则返回 False.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.endswith(obj)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.endswith(<span class="string">"cpp"</span>)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<h4 id="lower"><a href="#lower" class="headerlink" title="lower"></a><10>lower</10></h4><p>转换 mystr 中所有大写字符为小写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.lower()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">"Hello world"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.lower()</span><br><span class="line"><span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
-<h4 id="upper"><a href="#upper" class="headerlink" title="upper"></a><11>upper</11></h4><p>转换 mystr 中的小写字母为大写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.upper()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">"Hello world"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.lower()</span><br><span class="line"><span class="string">'HELLO WORLD'</span></span><br></pre></td></tr></table></figure>
-<h4 id="ljust"><a href="#ljust" class="headerlink" title="ljust"></a><12>ljust</12></h4><p>返回一个原字符串左对齐,并使用空格填充至长度 width 的新字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.ljust(width)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'hello'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.ljust(<span class="number">10</span>)</span><br><span class="line"><span class="string">'hello     '</span></span><br></pre></td></tr></table></figure>
-<h4 id="rjust"><a href="#rjust" class="headerlink" title="rjust"></a><13>rjust</13></h4><p>返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rjust(width)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'hello'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.rjust(<span class="number">10</span>)</span><br><span class="line"><span class="string">'     hello'</span></span><br></pre></td></tr></table></figure>
-<h4 id="center"><a href="#center" class="headerlink" title="center"></a><14>center</14></h4><p>返回一个原字符串居中,并使用空格填充至长度 width 的新字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.center(width)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'hello world itcast and itcastcpp'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.center(<span class="number">50</span>)</span><br><span class="line"><span class="string">'         hello world itcast and itcastcpp         '</span></span><br></pre></td></tr></table></figure>
-<h4 id="lstrip"><a href="#lstrip" class="headerlink" title="lstrip"></a><15>lstrip</15></h4><p>删除 mystr 左边的空白字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.lstrip()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'   hello'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.lstrip()</span><br><span class="line"><span class="string">'hello'</span></span><br></pre></td></tr></table></figure>
-<h4 id="rstrip"><a href="#rstrip" class="headerlink" title="rstrip"></a><16>rstrip</16></h4><p>删除 mystr 字符串末尾的空白字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rstrip()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'hello   '</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.rstrip()</span><br><span class="line"><span class="string">'hello'</span></span><br></pre></td></tr></table></figure>
-<h4 id="strip"><a href="#strip" class="headerlink" title="strip"></a><17>strip</17></h4><p>删除mystr字符串两端的空白字符</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">"  itcast  "</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.strip()</span><br><span class="line"><span class="string">'itcast'</span></span><br></pre></td></tr></table></figure>
-<h3 id="rfind"><a href="#rfind" class="headerlink" title="rfind"></a><18>rfind</18></h3><p>类似于 find()函数，不过是从右边开始查找.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rfind(str, start=0,end=len(mystr) )</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'hello world itcast and itcastcpp'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.rfind(<span class="string">'itcast'</span>)</span><br><span class="line"><span class="number">23</span></span><br></pre></td></tr></table></figure>
-<h3 id="rindex"><a href="#rindex" class="headerlink" title="rindex"></a><19>rindex</19></h3><p>类似于 index()，不过是从右边开始.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rindex( str, start=0,end=len(mystr))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.rindex(<span class="string">'itcast'</span>)</span><br><span class="line"><span class="number">23</span></span><br></pre></td></tr></table></figure>
-<h3 id="partition"><a href="#partition" class="headerlink" title="partition"></a><20>partition</20></h3><p>把mystr以str分割成三部分,str前，str和str后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.partition(str)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.partition(<span class="string">'itcast'</span>)</span><br><span class="line">(<span class="string">'hello world '</span>, <span class="string">'itcast'</span>, <span class="string">' and itcastcpp'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="rpartition"><a href="#rpartition" class="headerlink" title="rpartition"></a><21>rpartition</21></h3><p>类似于 partition()函数,不过是从右边开始.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rpartition(str)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.rpartition(<span class="string">'itcast'</span>)</span><br><span class="line">(<span class="string">'hello world itcast and '</span>, <span class="string">'itcast'</span>, <span class="string">'cpp'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="splitlines"><a href="#splitlines" class="headerlink" title="splitlines"></a><22>splitlines</22></h3><p>按照行分隔，返回一个包含各行作为元素的列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.splitlines()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'hello\nworld'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(mystr)</span><br><span class="line">hello</span><br><span class="line">world</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.splitlines()</span><br><span class="line">[<span class="string">'hello'</span>, <span class="string">'world'</span>]</span><br></pre></td></tr></table></figure>
-<h3 id="isalpha"><a href="#isalpha" class="headerlink" title="isalpha"></a><23>isalpha</23></h3><p>如果 mystr 所有字符都是字母 则返回 True,否则返回 False</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isalpha()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr = <span class="string">'abc'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mystr.isalpha()</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<h3 id="isdigit"><a href="#isdigit" class="headerlink" title="isdigit"></a><24>isdigit</24></h3><p>如果 mystr 只包含数字则返回 True 否则返回 False.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isdigit()</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; mystr = &apos;abc&apos;</span><br><span class="line">&gt;&gt;&gt; mystr.isalpha()</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
-<h3 id="isalnum"><a href="#isalnum" class="headerlink" title="isalnum"></a><25>isalnum</25></h3><p>如果 mystr 所有字符都是字母或数字则返回 True,否则返回 False</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isalnum()</span><br></pre></td></tr></table></figure>
-<h3 id="isspace"><a href="#isspace" class="headerlink" title="isspace"></a><26>isspace</26></h3><p>如果 mystr 中只包含空格，则返回 True，否则返回 False.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isspace()</span><br></pre></td></tr></table></figure>
-<h3 id="join"><a href="#join" class="headerlink" title="join"></a><27>join</27></h3><p>mystr 中每个字符后面插入str,构造出一个新的字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.join(str)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>str = <span class="string">' '</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>li = [<span class="string">'hello'</span>,<span class="string">'world'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str.join(li)</span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str = <span class="string">'_'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>li = [<span class="string">'hello'</span>,<span class="string">'world'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str.join(li)</span><br><span class="line"><span class="string">'hello_world'</span></span><br></pre></td></tr></table></figure>
-<p>4.4日工作进展</p>
-<p>检查了一遍用百度API测试的有人脸的数据，一共45000多张，每个id随机挑出了10张有人脸的照片，挑出了将近6000多张，作为测试集图片。然后用百度api测试了一下这张数据，发现检测效果不好。晚上跟马龙讨论了一下下一步的工作计划，初步安排如下：</p>
-<p>1，训练一个分类器，用于判断图象中是否有人。</p>
-<p>2，训练一个人脸和特征点检测模型，一个眼睛和嘴的检测模型，在判断出图像中有人的前提下，用人脸检测模型和眼睛、嘴的检测模型分别检测，如果人脸检测模型和眼睛、嘴的检测模型的检测结果可以对上，就以人脸检测模型为准，如果两个模型的检测结果对不上，就以眼镜、嘴的检测模型结果为准。</p>
-
+            <p>
+              1，切片切片是指对操作的对象截取其中一部分的操作。字符串、列表、元组都支持切片操作。
+切片的语法：[起始:结束:步长]注意：选取的区间属于左闭右开型，即从”起始”位开始，到”结束”位的前一位结束（不包
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/28/python/python基础2:字符串/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1288,245 +1199,20 @@
       
         
           
-            <h2 id="1，变量类型"><a href="#1，变量类型" class="headerlink" title="1，变量类型"></a>1，变量类型</h2><p>Python有6种变量类型：number，bool，string，list，tuple，dictionary。number又分为float，int，long, complex。</p>
-<h2 id="2，标识符和关键字"><a href="#2，标识符和关键字" class="headerlink" title="2，标识符和关键字"></a>2，标识符和关键字</h2><p>标示符由字母、下划线和数字组成，且数字不能开头。</p>
-<p>标识符区分大小写的</p>
-<p>查看关键字:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line">print(keyword.kwlist)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">and</span>     <span class="keyword">as</span>      <span class="keyword">assert</span>     <span class="keyword">break</span>     <span class="class"><span class="keyword">class</span>      <span class="title">continue</span>    <span class="title">def</span>     <span class="title">del</span></span></span><br><span class="line"><span class="class"><span class="title">elif</span>    <span class="title">else</span>    <span class="title">except</span>     <span class="title">exec</span>      <span class="title">finally</span>    <span class="title">for</span>         <span class="title">from</span>    <span class="title">global</span></span></span><br><span class="line"><span class="class"><span class="title">if</span>      <span class="title">in</span>      <span class="title">import</span>     <span class="title">is</span>        <span class="title">lambda</span>     <span class="title">not</span>         <span class="title">or</span>      <span class="title">pass</span></span></span><br><span class="line"><span class="class"><span class="title">print</span>   <span class="title">raise</span>   <span class="title">return</span>     <span class="title">try</span>       <span class="title">while</span>      <span class="title">with</span>        <span class="title">yield</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="3-格式化输出"><a href="#3-格式化输出" class="headerlink" title="3,格式化输出"></a>3,格式化输出</h2><p>常用的格式化输出</p>
-<table>
-<thead>
-<tr>
-<th>格式符号</th>
-<th>转换</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>%c</td>
-<td>字符</td>
-</tr>
-<tr>
-<td>%s</td>
-<td>通过str() 字符串转换来格式化</td>
-</tr>
-<tr>
-<td>%i</td>
-<td>有符号十进制整数</td>
-</tr>
-<tr>
-<td>%d</td>
-<td>有符号十进制整数</td>
-</tr>
-<tr>
-<td>%u</td>
-<td>无符号十进制整数</td>
-</tr>
-<tr>
-<td>%o</td>
-<td>八进制整数</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>十六进制整数（小写字母）</td>
-</tr>
-<tr>
-<td>%X</td>
-<td>十六进制整数（大写字母）</td>
-</tr>
-<tr>
-<td>%e</td>
-<td>索引符号（小写’e’）</td>
-</tr>
-<tr>
-<td>%E</td>
-<td>索引符号（大写“E”）</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>浮点实数</td>
-</tr>
-<tr>
-<td>%g</td>
-<td>％f和％e 的简写</td>
-</tr>
-<tr>
-<td>%G</td>
-<td>％f和％E的简写</td>
-</tr>
-</tbody>
-</table>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">18</span></span><br><span class="line">name = <span class="string">"xiaohua"</span></span><br><span class="line">print(<span class="string">"我的姓名是%s,年龄是%d"</span>%(name,age))</span><br></pre></td></tr></table></figure>
-<h2 id="4，输入"><a href="#4，输入" class="headerlink" title="4，输入"></a>4，输入</h2><p>input()函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = input() </span><br><span class="line">123</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">123</span><br><span class="line">&gt;&gt;&gt; a = input(&apos;请输入：剪刀(0)  石头(1)  布(2):&apos;)</span><br></pre></td></tr></table></figure>
-<h2 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5,运算符"></a>5,运算符</h2><p>算术运算符</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>实例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+</td>
-<td>加</td>
-<td>两个对象相加 a + b 输出结果 30</td>
-</tr>
-<tr>
-<td>-</td>
-<td>减</td>
-<td>得到负数或是一个数减去另一个数 a - b 输出结果 -10</td>
-</tr>
-<tr>
-<td>*</td>
-<td>乘</td>
-<td>两个数相乘或是返回一个被重复若干次的字符串 a * b 输出结果 200</td>
-</tr>
-<tr>
-<td>/</td>
-<td>除</td>
-<td>x除以y b / a 输出结果 2</td>
-</tr>
-<tr>
-<td>//</td>
-<td>取整除</td>
-<td>返回商的整数部分 9//2 输出结果 4 , 9.0//2.0 输出结果 4.0</td>
-</tr>
-<tr>
-<td>%</td>
-<td>取余</td>
-<td>返回除法的余数 b % a 输出结果 0</td>
-</tr>
-<tr>
-<td>**</td>
-<td>幂</td>
-<td>返回x的y次幂 a**b 为10的20次方， 输出结果 100000000000000000000</td>
-</tr>
-</tbody>
-</table>
-<p>复合赋值运算符</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>实例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+=</td>
-<td>加法赋值运算符</td>
-<td>c += a 等效于 c = c + a</td>
-</tr>
-<tr>
-<td>-=</td>
-<td>减法赋值运算符</td>
-<td>c -= a 等效于 c = c - a</td>
-</tr>
-<tr>
-<td>*=</td>
-<td>乘法赋值运算符</td>
-<td>c <em>= a 等效于 c = c </em> a</td>
-</tr>
-<tr>
-<td>/=</td>
-<td>除法赋值运算符</td>
-<td>c /= a 等效于 c = c / a</td>
-</tr>
-<tr>
-<td>%=</td>
-<td>取模赋值运算符</td>
-<td>c %= a 等效于 c = c % a</td>
-</tr>
-<tr>
-<td>**=</td>
-<td>幂赋值运算符</td>
-<td>c <strong>= a 等效于 c = c </strong> a</td>
-</tr>
-<tr>
-<td>//=</td>
-<td>取整除赋值运算符</td>
-<td>c //= a 等效于 c = c // a</td>
-</tr>
-</tbody>
-</table>
-<h2 id="6-常用的数据类型转换"><a href="#6-常用的数据类型转换" class="headerlink" title="6,常用的数据类型转换"></a>6,常用的数据类型转换</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>int(x [,base ])</td>
-<td>将x转换为一个整数</td>
-</tr>
-<tr>
-<td>long(x [,base ])</td>
-<td>将x转换为一个长整数</td>
-</tr>
-<tr>
-<td>float(x )</td>
-<td>将x转换到一个浮点数</td>
-</tr>
-<tr>
-<td>complex(real [,imag ])</td>
-<td>创建一个复数</td>
-</tr>
-<tr>
-<td>str(x )</td>
-<td>将对象 x 转换为字符串</td>
-</tr>
-<tr>
-<td>repr(x )</td>
-<td>将对象 x 转换为表达式字符串</td>
-</tr>
-<tr>
-<td>eval(str )</td>
-<td>用来计算在字符串中的有效Python表达式,并返回一个对象</td>
-</tr>
-<tr>
-<td>tuple(s )</td>
-<td>将序列 s 转换为一个元组</td>
-</tr>
-<tr>
-<td>list(s )</td>
-<td>将序列 s 转换为一个列表</td>
-</tr>
-<tr>
-<td>chr(x )</td>
-<td>将一个整数转换为一个字符</td>
-</tr>
-<tr>
-<td>unichr(x )</td>
-<td>将一个整数转换为Unicode字符</td>
-</tr>
-<tr>
-<td>ord(x )</td>
-<td>将一个字符转换为它的整数值</td>
-</tr>
-<tr>
-<td>hex(x )</td>
-<td>将一个整数转换为一个十六进制字符串</td>
-</tr>
-<tr>
-<td>oct(x )</td>
-<td>将一个整数转换为一个八进制字符串</td>
-</tr>
-</tbody>
-</table>
-<h2 id="7-break-continue"><a href="#7-break-continue" class="headerlink" title="7,break/continue"></a>7,break/continue</h2><ul>
-<li>break/continue只能用在循环中，除此以外不能单独使用</li>
-<li>break/continue在嵌套循环中，只对最近的一层循环起作用</li>
-</ul>
-
+            <p>
+              1，变量类型Python有6种变量类型：number，bool，string，list，tuple，dictionary。number又分为float，int，long, complex。
+2，标识符
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/22/python/python基础1:基础知识/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1643,16 +1329,16 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 15:12:16" itemprop="dateModified" datetime="2019-03-26T15:12:16+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-20 19:09:05" itemprop="dateModified" datetime="2019-04-20T19:09:05+08:00">2019-04-20</time>
               
             
 
             
               <span class="post-letters-count">
                 &nbsp; | &nbsp;
-                <span>字数统计: 994 字</span>
+                <span>字数统计: 1,061 字</span>
                 &nbsp; | &nbsp;
-                <span>阅读时长: 4 分钟</span>
+                <span>阅读时长: 5 分钟</span>
               </span>
             
 
@@ -1703,45 +1389,24 @@
       
         
           
-            <h2 id="1-中文设置"><a href="#1-中文设置" class="headerlink" title="1, 中文设置"></a>1, 中文设置</h2><p>修改站点配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></table></figure>
-<h2 id="2-修改文章底部的那个带-号的标签"><a href="#2-修改文章底部的那个带-号的标签" class="headerlink" title="2, 修改文章底部的那个带#号的标签"></a>2, 修改文章底部的那个带#号的标签</h2><p><strong>实现效果图</strong></p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/2_1.png" alt="2_1.png"></p>
-<p><strong>具体实现方法</strong></p>
-<p>修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 # 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
-<h2 id="3-添加网站访问量统计"><a href="#3-添加网站访问量统计" class="headerlink" title="3, 添加网站访问量统计"></a>3, 添加网站访问量统计</h2><p>修改主题配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-<h2 id="4-添加评论"><a href="#4-添加评论" class="headerlink" title="4, 添加评论"></a>4, 添加评论</h2><p>修改主题文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.</span><br><span class="line">  appid:  # your leancloud application appid</span><br><span class="line">  appkey: # your leancloud application appkey</span><br></pre></td></tr></table></figure>
-<p>此处需要去<a href="https://leancloud.cn" target="_blank" rel="noopener">https://leancloud.cn</a>注册一个账号并新建一个应用，将得到的appid和appkey添加上就可以了</p>
-<h2 id="5-隐藏网页底部powered-By-Hexo-强力驱动"><a href="#5-隐藏网页底部powered-By-Hexo-强力驱动" class="headerlink" title="5,隐藏网页底部powered By Hexo / 强力驱动"></a>5,隐藏网页底部powered By Hexo / 强力驱动</h2><p>修改主题文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  cleanly: true # Hide &apos;Powered by ...&apos; on footer, and more</span><br></pre></td></tr></table></figure>
-<p>或者打开<code>themes/next/layout/_partials/footer.swig</code>,使用<!-- -->隐藏之间的代码即可，或者直接删除。位置如图：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">&#123;% if theme.footer.powered.enable %&#125;</span><br><span class="line">  &lt;div class=&quot;powered-by&quot;&gt;&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&apos;footer.powered&apos;, next_url(&apos;https://hexo.io&apos;, &apos;Hexo&apos;, &#123;class: &apos;theme-link&apos;&#125;)) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.powered.version %&#125; v&#123;&#123; hexo_env(&apos;version&apos;) &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line"> #&#125;&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.powered.enable and theme.footer.theme.enable %&#125;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.theme.enable %&#125;</span><br><span class="line">  &lt;div class=&quot;theme-info&quot;&gt;&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&apos;footer.theme&apos;) &#125;&#125; – &#123;&#123; next_url(&apos;https://theme-next.org&apos;, &apos;NexT.&apos; + theme.scheme, &#123;class: &apos;theme-link&apos;&#125;) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.theme.version %&#125; v&#123;&#123; version &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line">#&#125;&lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="6，添加字数统计与阅读时长"><a href="#6，添加字数统计与阅读时长" class="headerlink" title="6，添加字数统计与阅读时长"></a>6，添加字数统计与阅读时长</h2><h3 id="安装-hexo-wordcount-插件"><a href="#安装-hexo-wordcount-插件" class="headerlink" title="安装 hexo-wordcount 插件"></a>安装 hexo-wordcount 插件</h3><p>首先在博客目录下使用 npm 安装插件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure>
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>为了方便地开启和关闭字数统计功能，我们需要在配置文件（站点配置文件或主题配置文件均可）中添加一个键值对：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 开启字数统计</span><br><span class="line">word_count: true</span><br><span class="line"></span><br><span class="line"># 关闭字数统计</span><br><span class="line"># word_count: false</span><br></pre></td></tr></table></figure>
-<h3 id="修改主题-swig-布局"><a href="#修改主题-swig-布局" class="headerlink" title="修改主题 swig 布局"></a>修改主题 swig 布局</h3><h3 id="修改-post-swig"><a href="#修改-post-swig" class="headerlink" title="修改 post.swig"></a>修改 post.swig</h3><p>为了能在文章信息处显示字数，我们需要修改 <code>themes/next/layout/_macro/post.swig</code>，在 class 为 <code>post-mata</code> 的 div 中的添加如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.word_count %&#125;</span><br><span class="line">  &lt;span class=&quot;post-letters-count&quot;&gt;</span><br><span class="line">    &amp;nbsp; | &amp;nbsp;</span><br><span class="line">    &lt;span&gt;&#123;&#123; wordcount(post.content) &#125;&#125; 字&lt;/span&gt;</span><br><span class="line">    &amp;nbsp; | &amp;nbsp;</span><br><span class="line">    &lt;span&gt;&#123;&#123; min2read(post.content) &#125;&#125; min&lt;/span&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="修改-footer-swig"><a href="#修改-footer-swig" class="headerlink" title="修改 footer.swig"></a>修改 footer.swig</h3><p>想要在页面底部网站信息处显示字数统计，就要修改 <code>themes/next/layout/_partial/footer.swig</code>，在文件的最后添加如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;theme-info&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;powered-by&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;span class=&quot;post-count&quot;&gt;共&#123;&#123; totalcount(site) &#125;&#125;字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="7，添加背景图片"><a href="#7，添加背景图片" class="headerlink" title="7，添加背景图片"></a>7，添加背景图片</h2><h3 id="修改背景样式"><a href="#修改背景样式" class="headerlink" title="修改背景样式"></a>修改背景样式</h3><p>修改themes\next\source\css\ _custom\custom.styl文件，这个是Next故意留给用户自己个性化定制一些样式的文件，添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background:url(https://source.unsplash.com/random/1600x900);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果自己不喜欢这个网址提供的图片做背景，那么修改url()里面的路径即可。repeat、attachment、position就是调整图片的位置，不重复出现、不滚动等等。</p>
-<h3 id="修改不透明度"><a href="#修改不透明度" class="headerlink" title="修改不透明度"></a>修改不透明度</h3><p>完成这一步其实背景就会自动更换了，但是会出现一个问题，因为next主题的背景是纯透明的，这样子就造成背景图片的影响看不见文字，这对于博客来说肯定不行。</p>
-<p>那么就需要调整背景的不透明度了。同样是修改themes\next\source\css\ _custom\custom.styl文件。在后面添加如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.main-inner &#123; </span><br><span class="line">    margin-top: 60px;</span><br><span class="line">    padding: 60px 60px 60px 60px;</span><br><span class="line">    background: #fff;</span><br><span class="line">    opacity: 0.8;</span><br><span class="line">    min-height: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>background: #fff; 白色</li>
-<li>opacity: 0.8;不透明度</li>
-</ul>
-<h2 id="8-实现全站Https"><a href="#8-实现全站Https" class="headerlink" title="8,实现全站Https"></a>8,实现全站Https</h2><p>申请SSL证书<br>【注意：如果是Github+Coding双线部署，申请SSL证书前需要先将解析到github.io的CNAME记录暂停！！！不然Let’s Encrypt主机在验证域名所有权时会定位到Github Pages的主机上导致SSL证书申请失败】 </p>
-<p>等待10分钟左右申请成功</p>
-<p>开启coding.net和github的Https就可以了 </p>
-<h2 id="ref："><a href="#ref：" class="headerlink" title="ref："></a>ref：</h2><p><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></p>
+            <p>
+              1, 中文设置修改站点配置文件：
+language: zh-CN
+2, 修改文章底部的那个带#号的标签实现效果图
 
+具体实现方法
+修改模板/themes/next/layout/_macro/post
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/20/blog/hexo个性化设置/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1918,66 +1583,22 @@
       
         
           
-            <h3 id="1，获得个人域名"><a href="#1，获得个人域名" class="headerlink" title="1，获得个人域名"></a>1，获得个人域名</h3><p>直接去万网注册一个域名就行</p>
-<h3 id="2，创建Github个人仓库"><a href="#2，创建Github个人仓库" class="headerlink" title="2，创建Github个人仓库"></a>2，创建Github个人仓库</h3><p>在github创建博客仓库，仓库的名字为：用户名.github.io。</p>
-<h3 id="3，安装依赖项"><a href="#3，安装依赖项" class="headerlink" title="3，安装依赖项"></a>3，安装依赖项</h3><p>使用npm命令安装Hexo，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成后，可以在本地新建文件夹：web，初始化我们的博客，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-<p>注意，这里的命令都是作用在刚刚创建的web文件夹中。</p>
-<p>完成后，在web下会生成blog文件夹，依次输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">hexo new blog</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>会看到如下信息：</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/blog1.png" alt></p>
-<p>打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>, 可看到如下页面：</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/blog2.png" alt></p>
-<p>至此，hexo基本环境就配置好了</p>
-<h3 id="4，推送网站"><a href="#4，推送网站" class="headerlink" title="4，推送网站"></a>4，推送网站</h3><p>本地测试好了，就可以将网站推送到github pages了。</p>
-<p>修改站点配置文件_config.yml如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">- type: git</span><br><span class="line">  repository: https://github.com/dpsfigo/dpsfigo.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>重新部署，打开：http://你自己的地址.github.io,就可以看到自己的网站了。</p>
-<h3 id="5，域名绑定"><a href="#5，域名绑定" class="headerlink" title="5，域名绑定"></a>5，域名绑定</h3><p>查询github的IP地址，在<a href="http://github.com.ipaddress.com/" target="_blank" rel="noopener">这里</a>可以查询。</p>
-<p>打开阿里云管理控制台，解析自己申请的域名：</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/blog3.png" alt></p>
-<p>前两条为github的IP地址，第三条为自己的主页地址。或者ping 自己的github page地址，用获得的ip地址作为记录值。</p>
-<p>打开github里面的项目设置，找到custom domain，修改为自己的地址并保存。</p>
-<p><img src="/2019/03/18/blog/Hexo搭建个人博客/pic/blog4.png" alt></p>
-<p>都配置好后，打开自己的域名地址就可以看到blog了。</p>
-<h3 id="6，更换主题"><a href="#6，更换主题" class="headerlink" title="6，更换主题"></a>6，更换主题</h3><p>跟换最主流的next主题，在blog文件夹下输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开站点配置文件，修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>修改完后重新部署，即可看到更换主题后的博客了。</p>
-<p><strong>更新next主题</strong></p>
-<ul>
-<li><p>克隆新的 v6.x 仓库到任一异于 next 的目录（如 next-reloaded名称可以自定义）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next-v6</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后在 Hexo 的主配置文件中设置主题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next-v6</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>然后进入配置文件<code>_config.yml</code>,配置相关设置。</p>
-<h3 id="7，百度和google收录"><a href="#7，百度和google收录" class="headerlink" title="7，百度和google收录"></a>7，百度和google收录</h3><p>博客除了自己记录笔记之外，也想让其他人能够搜索到，此时需要博客域名被百度和google收录。google收录比较简单，尝试了很多种办法，终于搞定了百度收录。</p>
-<h4 id="安装sitemap插件"><a href="#安装sitemap插件" class="headerlink" title="安装sitemap插件"></a>安装sitemap插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save     </span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>修改站点配置文件，改成自己的域名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yfnotes.cn</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-<p>部署后会生成sitemap.xml和baidusitemap.xml两个文件</p>
-<h4 id="向百度提交链接"><a href="#向百度提交链接" class="headerlink" title="向百度提交链接"></a>向百度提交链接</h4><p>安装插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-baidu-url-submit --save</span><br></pre></td></tr></table></figure>
-<p>再在站点配置文件中添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">baidu_url_submit:</span><br><span class="line">  count: 100 # 提交最新的一个链接</span><br><span class="line">  host: www.yfnotes.cn # 在百度站长平台中注册的域名</span><br><span class="line">  token: 你自己的的token # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!</span><br><span class="line">  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里</span><br></pre></td></tr></table></figure>
-<p>再加入新的deploye</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> - type:baidu_url_submitter</span><br></pre></td></tr></table></figure>
-<p>这样每次deploy都时候就会自动推送了</p>
-<p>修改主题配置文件自动推送：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.</span><br><span class="line">baidu_push: true</span><br></pre></td></tr></table></figure>
-<h3 id="同时托管到github和coding"><a href="#同时托管到github和coding" class="headerlink" title="同时托管到github和coding"></a>同时托管到github和coding</h3><p>参考<a href="https://blog.csdn.net/sunshine940326/article/details/70936988" target="_blank" rel="noopener">hexo高阶教程：想让你的博客被更多的人在搜索引擎中搜到吗？</a></p>
-<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><h4 id="1：出现问题：ERROR-Deployer-not-found-git"><a href="#1：出现问题：ERROR-Deployer-not-found-git" class="headerlink" title="1：出现问题：ERROR Deployer not found: git"></a>1：出现问题：ERROR Deployer not found: git</h4><p>解决办法：在blog文件夹下输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --sav</span><br></pre></td></tr></table></figure>
-<h3 id="ref"><a href="#ref" class="headerlink" title="ref:"></a>ref:</h3><p><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a></p>
-
+            <p>
+              1，获得个人域名直接去万网注册一个域名就行
+2，创建Github个人仓库在github创建博客仓库，仓库的名字为：用户名.github.io。
+3，安装依赖项使用npm命令安装Hexo，输入：
+npm
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/18/blog/Hexo搭建个人博客/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -2154,66 +1775,22 @@
       
         
           
-            <h3 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>模型特点</strong></p>
-<p>输出表述是将给定的label转换为一个向量，作为神经网络的真值。传统常见的方法为1 of N，这里不在赘述。<br>文章中是把图片对应的字符在7x12的bitmap上画出，白值为-1，黑值为1，其中84个像素平铺之后的向量对应为相应字符的表述，作为真值与F6连接。这样做的优点有： </p>
-<ol>
-<li>对于识别全打印的ASCII字符有用（单独数字无用） </li>
-<li>外表相近的字符如”i”和”1”等在这种表述中也相近，这样在神经网络之后加入个依靠语义更正的系统，可以提高准确率。 </li>
-<li>1 of N的表述在N大于几十的时候就会表现不好。 </li>
-<li>这样的表示可以用于拒绝非字符，而不是所有的都识别为字符。<br>设置“白值为-1，黑值为1”的原因是为了把函数限定在sigmoid函数斜率较大的区域，否则收敛较慢，而且会ill-conditioning。这个1的选择是由A得出，使得sigmoid的二次导最大（作者的猜测，还没有看论文验证））</li>
-</ol>
-<p>LeNet在输出层之前最后一个全连接层的大小设为84，是希望每一维特征分别提现标准7*12大小为图上每一个像素点的特性。</p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Alexnet"><a href="#Alexnet" class="headerlink" title="Alexnet"></a>Alexnet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="ZFNet"><a href="#ZFNet" class="headerlink" title="ZFNet"></a>ZFNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V1"><a href="#Inception-V1" class="headerlink" title="Inception-V1"></a>Inception-V1</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V2"><a href="#Inception-V2" class="headerlink" title="Inception-V2"></a>Inception-V2</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V3"><a href="#Inception-V3" class="headerlink" title="Inception-V3"></a>Inception-V3</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception-V4"></a>Inception-V4</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="ResNeXt"><a href="#ResNeXt" class="headerlink" title="ResNeXt"></a>ResNeXt</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="SENet"><a href="#SENet" class="headerlink" title="SENet"></a>SENet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="DenselyNet"><a href="#DenselyNet" class="headerlink" title="DenselyNet"></a>DenselyNet</h3><p><strong>网络结构图</strong></p>
-<p><strong>网络的参数</strong></p>
-<p><strong>贡献点</strong></p>
-<p><strong>结论</strong></p>
-<h3 id="Ref："><a href="#Ref：" class="headerlink" title="Ref："></a>Ref：</h3><p><a href="https://blog.csdn.net/silent56_th/article/details/53456522" target="_blank" rel="noopener">https://blog.csdn.net/silent56_th/article/details/53456522</a> </p>
-
+            <p>
+              LeNet网络结构图
+网络的参数
+模型特点
+输出表述是将给定的label转换为一个向量，作为神经网络的真值。传统常见的方法为1 of N，这里不在赘述。文章中是把图片对应的字符在7x12的bitmap
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/05/deeplearning/经典网络/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -2390,35 +1967,22 @@
       
         
           
-            <h2 id="CNN时间复杂度"><a href="#CNN时间复杂度" class="headerlink" title="CNN时间复杂度"></a>CNN时间复杂度</h2><h4 id="单个卷积层的时间复杂度"><a href="#单个卷积层的时间复杂度" class="headerlink" title="单个卷积层的时间复杂度"></a>单个卷积层的时间复杂度</h4><p>$$Time:  O(M^2·K^2·C_{in}·C_{out})$$</p>
-<p>$M:$每个卷积核输出特征图的边长</p>
-<p>$K:​$每个卷积核的边长</p>
-<p>$C_{in}:$输入通道数</p>
-<p>$C_{out}:$输出通道数</p>
-<p>$M$又和图片尺寸$X$有关：</p>
-<p>$$M = (X-stride+2*padding)/stride +1$$</p>
-<h4 id="多个卷积层的时间复杂度"><a href="#多个卷积层的时间复杂度" class="headerlink" title="多个卷积层的时间复杂度"></a>多个卷积层的时间复杂度</h4><p>$$Time:  O(\sum_{l=1}^{n}M^2_{l}·K^2_{l}·C_{l-1}·C_{l})$$</p>
-<ul>
-<li>$n:$ 神经网络所具有的卷积层数，也即<strong>网络的深度</strong>。</li>
-<li>$l:$神经网络第 $l$ 个卷积层</li>
-<li>$C_{l}$ 神经网络第 $l$ 个卷积层的输出通道数 <img src="https://www.zhihu.com/equation?tex=C_%7Bout%7D" alt="C_{out}"> ，也即该层的卷积核个数。</li>
-<li>对于第 <img src="https://www.zhihu.com/equation?tex=l" alt="l"> 个卷积层而言，其输入通道数 <img src="https://www.zhihu.com/equation?tex=C_%7Bin%7D" alt="C_{in}"> 就是第 <img src="https://www.zhihu.com/equation?tex=%28l+-+1%29" alt="(l - 1)"> 个卷积层的输出通道数。</li>
-<li>可见，CNN整体的时间复杂度并不神秘，只是所有卷积层的时间复杂度累加而已。</li>
-<li>简而言之，层内连乘，层间累加。</li>
-</ul>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>$$Space:  O(\sum_{l=1}^{n}K^2_{l}·C_{l-1}·C_{l}+\sum_{l=1}^{n}M^2_{l}·C_{l})$$</p>
-<ul>
-<li>总参数量只与卷积核的尺寸 <img src="https://www.zhihu.com/equation?tex=K" alt="K"> 、通道数 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 、层数 <img src="https://www.zhihu.com/equation?tex=D" alt="D"> 相关，而<strong>与输入数据的大小无关</strong>。</li>
-<li>输出特征图的空间占用比较容易，就是其空间尺寸 <img src="https://www.zhihu.com/equation?tex=M%5E2" alt="M^2"> 和通道数 <img src="https://www.zhihu.com/equation?tex=C" alt="C"> 的连乘</li>
-</ul>
-<h2 id="复杂度对模型的影响"><a href="#复杂度对模型的影响" class="headerlink" title="复杂度对模型的影响"></a>复杂度对模型的影响</h2><ul>
-<li>时间复杂度决定了模型的训练/预测时间。如果复杂度过高，则会导致模型训练和预测耗费大量时间，既无法快速的验证想法和改善模型，也无法做到快速的预测。</li>
-<li>空间复杂度决定了模型的参数数量。由于维度诅咒的限制，模型的参数越多，训练模型所需的数据量就越大，而现实生活中的数据集通常不会太大，这会导致模型的训练更容易过拟合。</li>
-<li>当我们需要裁剪模型时，由于卷积核的空间尺寸通常已经很小（3x3），而网络的深度又与模型的表征能力紧密相关，不宜过多削减，因此模型裁剪通常最先下手的地方就是通道数。</li>
-</ul>
-<h3 id="Ref："><a href="#Ref：" class="headerlink" title="Ref："></a>Ref：</h3><p><a href="https://zhuanlan.zhihu.com/p/31575074" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31575074</a></p>
-
+            <p>
+              CNN时间复杂度单个卷积层的时间复杂度$$Time:  O(M^2·K^2·C_{in}·C_{out})$$
+$M:$每个卷积核输出特征图的边长
+$K:​$每个卷积核的边长
+$C_{in}:$输入通
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/31/deeplearning/卷积神经网络复杂度/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -2595,59 +2159,19 @@
       
         
           
-            <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>&emsp;&emsp;插入排序（Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到 O(1)O(1) 的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间</p>
-<p><strong>算法描述</strong></p>
-<ol>
-<li>从第一个元素开始，该元素可以认为已经被排序</li>
-<li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
-<li>如果该元素（已排序）大于新元素，将该元素移到下一位</li>
-<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
-<li>将新元素插入到该位置后</li>
-<li>重复步骤2~5</li>
-</ol>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。</p>
-<p><strong>算法描述</strong></p>
-<ol>
-<li>初始状态：无序区为R[1..n]，有序区为空；</li>
-<li>第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中选出关键字最小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</li>
-<li>n-1趟结束，数组有序化了</li>
-</ol>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>&emsp;&emsp;冒泡排序(Bubble Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元nn个项目需要O(n2)O(n2) 的比较次数，且可以原地排序。尽管这个算法是最简单了解和实现的排序算法之一，但它对于包含大量的元素的数列排序是很没有效率的</p>
-<p><strong>算法描述：</strong> </p>
-<ol>
-<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。 </li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。 </li>
-<li>针对所有的元素重复以上的步骤，除了最后一个 </li>
-<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较</li>
-</ol>
-<hr>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>&emsp;&emsp;快速排序（Quicksort），在平均状况下，排序 nn 个项目要 O(nlogn)O(nlog⁡n)）次比较。在最坏状况下则需要 O(n2)O(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他 O(nlogn)O(nlog⁡n) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出</p>
-<p><strong>算法描述：</strong><br>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists） </p>
-<ol>
-<li>从数列中挑出一个元素，称为”基准”（pivot） </li>
-<li>重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任何一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作 </li>
-<li>递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序</li>
-</ol>
-<hr>
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>&emsp;&emsp;归并排序（mergesort），是创建在归并操作上的一种有效的排序算法，效率为 O(nlogn)O(nlog⁡n)。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行</p>
-<h4 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h4><p><strong>迭代法</strong> </p>
-<ol>
-<li>申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列 </li>
-<li>设定两个指针，最初位置分别为两个已经排序序列的起始位置 </li>
-<li>比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置 </li>
-<li>重复步骤3直到某一指针到达序列尾 </li>
-<li>将另一序列剩下的所有元素直接复制到合并序列尾</li>
-</ol>
-<p><strong>递归法</strong> </p>
-<ol>
-<li>将序列每相邻两个数字进行归并操作，形成 ceil(n/2)ceil(n/2) 个序列，排序后每个序列包含两/一个元素 </li>
-<li>若此时序列数不是1个则将上述序列再次归并，形成 ceil(n/4)ceil(n/4) 个序列，每个序列包含四/三个元素 </li>
-<li>重复步骤2，直到所有元素排序完毕，即序列数为1</li>
-</ol>
-<hr>
-<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>&emsp;&emsp;希尔排序(Shell Sort)是插入排序的一种。也称缩小增量排序，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p>
-
+            <p>
+              插入排序&emsp;&emsp;插入排序（Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/25/algorithm/常见排序算法python实现/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -2830,7 +2354,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
 
 -->
 
@@ -2949,7 +2473,6 @@
 
 
   <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
-
 
 
 

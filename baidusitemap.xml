@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yfnotes.cn/2019/03/20/blog/hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2019-04-20</lastmod>
+  </url>  <url>
     <loc>http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/</loc>
     <lastmod>2019-04-20</lastmod>
   </url>  <url>
@@ -15,9 +18,6 @@
   </url>  <url>
     <loc>http://yfnotes.cn/2019/03/28/python/python%E5%9F%BA%E7%A1%802:%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2019-04-04</lastmod>
-  </url>  <url>
-    <loc>http://yfnotes.cn/2019/03/20/blog/hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/</loc>
-    <lastmod>2019-03-26</lastmod>
   </url>  <url>
     <loc>http://yfnotes.cn/2019/03/22/python/python%E5%9F%BA%E7%A1%801:%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2019-03-26</lastmod>

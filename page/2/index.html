@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +70,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
@@ -449,20 +449,27 @@
       
         
           
-            <p>二叉树遍历分为：先序遍历、中序遍历、后续遍历</p>
-<p>先序：1.访问根结点</p>
-<p>　　　2.访问左子树</p>
-<p>　　　3.访问右子树</p>
-<p>中序：1.访问左子树</p>
-<p>　　　2.访问根结点</p>
-<p>　　　3.访问右子树</p>
-<p>后序：1.访问左子树</p>
-<p>　　　2.访问右子树</p>
-<p>　　　3.访问根结点</p>
-<p>深度优先遍历（DFS）：先序遍历</p>
-<p>广度优先遍历（BFS）：层次遍历</p>
+            <p>
+              二叉树遍历分为：先序遍历、中序遍历、后续遍历
+先序：1.访问根结点
+　　　2.访问左子树
+　　　3.访问右子树
+中序：1.访问左子树
+　　　2.访问根结点
+　　　3.访问右子树
+后序：1.访问左子树
 
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/23/algorithm/二叉树遍历/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -627,21 +634,25 @@
       
         
           
-            <p>caffe 中卷积实现如下图所示：</p>
-<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-naive-loop.png" alt></p>
-<p>图解如下：</p>
-<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-1.png" alt></p>
-<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-2.png" alt></p>
-<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-3.jpg" alt></p>
-<p>假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$], 随着卷积核的滑动，生成一个Feature Matrix，尺寸为[$H_{o}·W_{o}$，$C·K·K$], 此处$H_{o},W_{o}$与$H,W$不相等,$$H_{o} = (H+2*padding)/stride+1$$, 同理$W_{o}$</p>
-<p>对卷积核做同样的处理，将其拉伸成一列，尺寸为[1, $C·K·K$]，假设有$C_{out}$个卷积核，则Filter Matrix的尺寸为：[$C_{out}, C·K·K$]。</p>
-<p>我们记图像那个矩阵是$A$，记卷积那个矩阵是$F$。那么，对于第$i$个卷积核来说，它现在实际上是$F$里面的第$i$个行向量。为了计算它在原来图像上的各个位置的卷积，现在我们需要它和矩阵$A$,中的每行做点积。也就是 $F_i <em> [A_1^T, A_2^T, … A_i^T]$ （也就是$A$的转置）。推广到其他的卷积核，就是说，最后的结果是$F</em>A^T$.</p>
-<p>由$F = Wx+b$可知，记$x =  [H_{o}·W_{o}，C·K·K$], $W = [C_{out}, C·K·K]$,则输出为：<br>$$<br>F = [C_{out}, C·K·K]·[H_{o}·W_{o}，C·K·K]^{T} + b=[C_{out},H_{o}·W_{o}]+b<br>$$</p>
-<p><strong>Ref:</strong></p>
-<p><a href="https://xmfbit.github.io/2018/02/26/conv-in-caffe/" target="_blank" rel="noopener">Caffe中卷积的大致实现思路</a></p>
-<p><a href="https://www.zhihu.com/question/28385679" target="_blank" rel="noopener">在 Caffe 中如何计算卷积？</a></p>
+            <p>
+              caffe 中卷积实现如下图所示：
 
+图解如下：
+
+
+
+假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$]
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/17/deeplearning/卷积的各种实现原理/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -824,7 +835,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.1</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
 
 -->
 
@@ -943,7 +954,6 @@
 
 
   <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
-
 
 
 
