@@ -96,21 +96,21 @@
 
 
 
-  <meta name="description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.gitcd tensorflowgit checkout r1.13 下载依赖项 1tensorflow/lite/to">
+  <meta name="description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.git#cd tensorflow#git checkout r1.13 使用最新版的tf，否则后面会报错 下载依赖项">
 <meta name="keywords" content="mobile">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mtcnn 编译tensorflow lite for ios">
 <meta property="og:url" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/index.html">
 <meta property="og:site_name" content="YF Notes">
-<meta property="og:description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.gitcd tensorflowgit checkout r1.13 下载依赖项 1tensorflow/lite/to">
+<meta property="og:description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.git#cd tensorflow#git checkout r1.13 使用最新版的tf，否则后面会报错 下载依赖项">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/grace_hopper.jpg">
+<meta property="og:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg">
 <meta property="og:image" content="http://polpzrqzq.bkt.clouddn.com/tensorflow_liet_for_ios_2.png">
-<meta property="og:updated_time" content="2019-04-16T03:13:03.817Z">
+<meta property="og:updated_time" content="2019-04-20T10:42:15.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mtcnn 编译tensorflow lite for ios">
-<meta name="twitter:description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.gitcd tensorflowgit checkout r1.13 下载依赖项 1tensorflow/lite/to">
-<meta name="twitter:image" content="http://polpzrqzq.bkt.clouddn.com/grace_hopper.jpg">
+<meta name="twitter:description" content="1，安装依赖项：12brew install automakebrew install libtool 2, 下载tensorflow源码1.13后源码里买呢才有lite 123git clone https://github.com/tensorflow/tensorflow.git#cd tensorflow#git checkout r1.13 使用最新版的tf，否则后面会报错 下载依赖项">
+<meta name="twitter:image" content="http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/grace_hopper.jpg">
 
 
 
@@ -403,14 +403,14 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 11:13:03" itemprop="dateModified" datetime="2019-04-16T11:13:03+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-20 18:42:15" itemprop="dateModified" datetime="2019-04-20T18:42:15+08:00">2019-04-20</time>
               
             
 
             
               <span class="post-letters-count">
                 &nbsp; | &nbsp;
-                <span>字数统计: 530 字</span>
+                <span>字数统计: 690 字</span>
                 &nbsp; | &nbsp;
                 <span>阅读时长: 3 分钟</span>
               </span>
@@ -470,15 +470,15 @@
       
         <h3 id="1，安装依赖项："><a href="#1，安装依赖项：" class="headerlink" title="1，安装依赖项："></a>1，安装依赖项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install automake</span><br><span class="line">brew install libtool</span><br></pre></td></tr></table></figure>
 <h3 id="2-下载tensorflow源码"><a href="#2-下载tensorflow源码" class="headerlink" title="2, 下载tensorflow源码"></a>2, 下载tensorflow源码</h3><p>1.13后源码里买呢才有lite</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/tensorflow/tensorflow.git</span><br><span class="line">cd tensorflow</span><br><span class="line">git checkout r1.13</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/tensorflow/tensorflow.git</span><br><span class="line">#cd tensorflow</span><br><span class="line">#git checkout r1.13 使用最新版的tf，否则后面会报错</span><br></pre></td></tr></table></figure>
 <p>下载依赖项</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/lite/tools/make/download_dependencies.sh</span><br></pre></td></tr></table></figure>
 <p>下载完的内容会放到：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/lite/downloads</span><br></pre></td></tr></table></figure>
 <p>编译ios库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/contrib/lite/build_ios_universal_lib.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># tf 1.13</span><br><span class="line">tensorflow/contrib/lite/build_ios_universal_lib.sh </span><br><span class="line"># tf 2.0</span><br><span class="line">tensorflow/lite/tools/make/build_ios_universal_lib.sh</span><br></pre></td></tr></table></figure>
 <p>编译完后会放到：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/figo/tensorflow/tensorflow/tensorflow/lite/tools/make/gen</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/lite/tools/make/gen</span><br></pre></td></tr></table></figure>
 <h3 id="3，mtcnn生成tflite文件"><a href="#3，mtcnn生成tflite文件" class="headerlink" title="3，mtcnn生成tflite文件"></a>3，mtcnn生成tflite文件</h3><p>tf版本：1.13.1</p>
 <p>numpy: 1.16.2</p>
 <p>具体可参考<a href="https://github.com/jiangxiluning/facenet_mtcnn_to_mobile" target="_blank" rel="noopener"><strong>facenet_mtcnn_to_mobile</strong></a></p>
@@ -499,7 +499,7 @@
 <p>运行的时候可能涉及到权限问题，在<strong>通用-&gt;设备管理-&gt;开发者信任</strong>里面点信任就可以了.</p>
 <p>也可以用模拟器，结果如下：</p>
 <p>原始图片：</p>
-<p><img src="http://polpzrqzq.bkt.clouddn.com/grace_hopper.jpg" alt="grace_hopper.jpg"></p>
+<p><img src="./grace_hopper.jpg" alt="grace_hopper.jpg"></p>
 <p>输出结果：</p>
 <p><img src="http://polpzrqzq.bkt.clouddn.com/tensorflow_liet_for_ios_2.png" alt="tensorflow_liet_for_ios_2.png"></p>
 <h2 id="出现问题："><a href="#出现问题：" class="headerlink" title="出现问题："></a>出现问题：</h2><p><strong>1.cannot find “flatbuffers/flatbuffers.h” head file</strong></p>
@@ -511,6 +511,12 @@
 <p><strong>4， no module named ‘click’</strong></p>
 <p>安装click：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install click</span><br></pre></td></tr></table></figure>
+<p><strong>5, Op builtin_code out of range: 101. Are you using old TFLite binary with newer model?</strong></p>
+<p>生成的tflite模型里面的操作在tflite库里面没有，相当于用了新的模型但是用了旧的库，升级tensorflow到最新版</p>
+<p><strong>6, num_input_elements != num_output_elements (223050 != 233050),Node number 26 (RESHAPE) failed to prepare.</strong></p>
+<p>调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (input_layer_type != &quot;string&quot;) &#123;</span><br><span class="line">    interpreter-&gt;ResizeInputTensor(input, sizes);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (interpreter-&gt;AllocateTensors() != kTfLiteOk) &#123;</span><br><span class="line">    NSLog(@&quot;Failed to allocate tensors.&quot;);</span><br><span class="line">    exit(-1);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>的时候报错，是因为图片的输入尺寸和tflite的输入尺寸不一致导致的，修改 size和tflite的输入尺寸一致。</p>
 <h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref:"></a>Ref:</h3><p><a href="https://www.jianshu.com/p/fa204a54a956" target="_blank" rel="noopener">TensorFlow Lite学习笔记2：生成TFLite模型文件</a></p>
 <p><a href="https://www.ctolib.com/jiangxiluning-facenet_mtcnn_to_mobile.html" target="_blank" rel="noopener">使用 TFLite 将 FaceNet 和 MTCNN 移植到移动端</a></p>
 
@@ -754,7 +760,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共7.7k字</span>
+  <span class="post-count">全站共7.9k字</span>
 </div>
 
         
