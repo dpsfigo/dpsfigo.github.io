@@ -104,15 +104,15 @@
 <meta property="og:site_name" content="YF Notes">
 <meta property="og:description" content="caffe 中卷积实现如下图所示：  图解如下：    假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$], 随着卷积核的滑动，生成一个Feature Matrix，尺寸为[$H_{o}·W_{o}$，$C·K·K$], 此处$H_{o},W_{o}$与$H,W$不相等,$$H_{o} = (H+2*pa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
-<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-1.png">
-<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-2.png">
-<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-im2col-3.jpg">
+<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
+<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-1.png">
+<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-2.png">
+<meta property="og:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-3.jpg">
 <meta property="og:updated_time" content="2018-10-17T08:29:09.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积的各种实现原理">
 <meta name="twitter:description" content="caffe 中卷积实现如下图所示：  图解如下：    假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$], 随着卷积核的滑动，生成一个Feature Matrix，尺寸为[$H_{o}·W_{o}$，$C·K·K$], 此处$H_{o},W_{o}$与$H,W$不相等,$$H_{o} = (H+2*pa">
-<meta name="twitter:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
+<meta name="twitter:image" content="http://yfnotes.cn/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-naive-loop.png">
 
 
 
@@ -459,11 +459,11 @@
 
       
         <p>caffe 中卷积实现如下图所示：</p>
-<p><img src="卷积的各种实现原理/conv-in-caffe-naive-loop.png" alt></p>
+<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-naive-loop.png" alt></p>
 <p>图解如下：</p>
-<p><img src="卷积的各种实现原理/conv-in-caffe-im2col-1.png" alt></p>
-<p><img src="卷积的各种实现原理/conv-in-caffe-im2col-2.png" alt></p>
-<p><img src="卷积的各种实现原理/conv-in-caffe-im2col-3.jpg" alt></p>
+<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-1.png" alt></p>
+<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-2.png" alt></p>
+<p><img src="/2018/10/17/deeplearning/卷积的各种实现原理/conv-in-caffe-im2col-3.jpg" alt></p>
 <p>假设图片尺寸为：$C·H·W$, 卷积核尺寸为：$C·K·K$，将卷积核每次卷积时对应的图片位置数据拉伸成一行，则尺寸为[1, $C·K·K$], 随着卷积核的滑动，生成一个Feature Matrix，尺寸为[$H_{o}·W_{o}$，$C·K·K$], 此处$H_{o},W_{o}$与$H,W$不相等,$$H_{o} = (H+2*padding)/stride+1$$, 同理$W_{o}$</p>
 <p>对卷积核做同样的处理，将其拉伸成一列，尺寸为[1, $C·K·K$]，假设有$C_{out}$个卷积核，则Filter Matrix的尺寸为：[$C_{out}, C·K·K$]。</p>
 <p>我们记图像那个矩阵是$A$，记卷积那个矩阵是$F$。那么，对于第$i$个卷积核来说，它现在实际上是$F$里面的第$i$个行向量。为了计算它在原来图像上的各个位置的卷积，现在我们需要它和矩阵$A$,中的每行做点积。也就是 $F_i <em> [A_1^T, A_2^T, … A_i^T]$ （也就是$A$的转置）。推广到其他的卷积核，就是说，最后的结果是$F</em>A^T$.</p>
