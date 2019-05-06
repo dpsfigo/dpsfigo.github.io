@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="YF Notes">
 <meta property="og:description" content="linux测试系统时间用gettimeofday函数，不要用clock函数，clock函数的实现方式决定了它不适合多核cpu场景。 Clock的实现是基于时钟计时单元的。问题出在cpu的时钟计时单元上。当采用多核cpu时，进程或线程调用clock，记录了当前核时钟。但在下次调用clock之前很可能发生cpu调度，进程或线程被调度到其他cpu上运行。这导致两次取得计时单元并不是同一个cpu的，产生计">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-06T04:11:34.823Z">
+<meta property="og:updated_time" content="2019-05-06T04:13:46.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux测试系统时间">
 <meta name="twitter:description" content="linux测试系统时间用gettimeofday函数，不要用clock函数，clock函数的实现方式决定了它不适合多核cpu场景。 Clock的实现是基于时钟计时单元的。问题出在cpu的时钟计时单元上。当采用多核cpu时，进程或线程调用clock，记录了当前核时钟。但在下次调用clock之前很可能发生cpu调度，进程或线程被调度到其他cpu上运行。这导致两次取得计时单元并不是同一个cpu的，产生计">
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-06 12:11:34" itemprop="dateModified" datetime="2019-05-06T12:11:34+08:00">2019-05-06</time>
+                <time title="修改时间：2019-05-06 12:13:46" itemprop="dateModified" datetime="2019-05-06T12:13:46+08:00">2019-05-06</time>
               
             
 
@@ -468,7 +468,7 @@
         <p>linux测试系统时间用<strong>gettimeofday</strong>函数，不要用<strong>clock</strong>函数，clock函数的实现方式决定了它不适合多核cpu场景。</p>
 <p>Clock的实现是基于时钟计时单元的。问题出在cpu的时钟计时单元上。当采用多核cpu时，进程或线程调用clock，记录了当前核时钟。但在下次调用clock之前很可能发生cpu调度，进程或线程被调度到其他cpu上运行。这导致两次取得计时单元并不是同一个cpu的，产生计时错误。</p>
 <p>gettimeofday函数可精确到微秒，使用方法：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sysc/time.h&gt;</span></span></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timeval</span> <span class="title">t1</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timeval</span> <span class="title">t2</span>;</span></span><br><span class="line"><span class="keyword">double</span> timeuse;</span><br><span class="line">gettimeofday(&amp;t1, <span class="literal">NULL</span>) <span class="comment">//起始时间</span></span><br><span class="line">...</span><br><span class="line">gettimeofday(&amp;t2, <span class="literal">NULL</span>) <span class="comment">//终止时间</span></span><br><span class="line">timeuse = t2.tv_sec - t1.tv_sec + (t2.tv_usec - t1.tv_usec)/<span class="number">1000000.0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sysc/time.h&gt;</span></span></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timeval</span> <span class="title">start</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">timeval</span> <span class="title">end</span>;</span></span><br><span class="line"><span class="keyword">double</span> timeuse;</span><br><span class="line">gettimeofday(&amp;start, <span class="literal">NULL</span>) <span class="comment">//起始时间</span></span><br><span class="line">...</span><br><span class="line">gettimeofday(&amp;end, <span class="literal">NULL</span>) <span class="comment">//终止时间</span></span><br><span class="line">timeuse = end.tv_sec - start.tv_sec + (end.tv_usec - start.tv_usec)/<span class="number">1000000.0</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
