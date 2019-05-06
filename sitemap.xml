@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yfnotes.cn/2019/04/12/cpp/linux%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/</loc>
+    
+    <lastmod>2019-05-06T04:11:34.823Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yfnotes.cn/2019/05/06/cpp/c-%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/</loc>
+    
+    <lastmod>2019-05-06T03:55:17.329Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yfnotes.cn/2019/04/11/project/tensorflow_lite_for_ios/</loc>
     
     <lastmod>2019-04-20T11:49:25.713Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://yfnotes.cn/2019/03/18/blog/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2019-04-20T10:57:56.710Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yfnotes.cn/2019/04/12/cpp/linux%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4/</loc>
-    
-    <lastmod>2019-04-12T11:12:01.569Z</lastmod>
     
   </url>
   
